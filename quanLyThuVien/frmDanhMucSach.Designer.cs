@@ -281,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 432);
+            this.ClientSize = new System.Drawing.Size(935, 478);
             this.Controls.Add(this.btXoaMS);
             this.Controls.Add(this.btSuaMS);
             this.Controls.Add(this.btThemMS);

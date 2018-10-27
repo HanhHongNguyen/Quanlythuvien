@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btOk = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.btCancel = new System.Windows.Forms.Button();
-            this.btOk = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,14 +54,46 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // label3
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên";
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(272, 22);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Đăng nhập hệ thống";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btOk
+            // 
+            this.btOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btOk.Location = new System.Drawing.Point(103, 183);
+            this.btOk.Name = "btOk";
+            this.btOk.Size = new System.Drawing.Size(71, 37);
+            this.btOk.TabIndex = 2;
+            this.btOk.Text = "OK";
+            this.btOk.UseVisualStyleBackColor = true;
+            this.btOk.Click += new System.EventHandler(this.btOk_Click);
+            // 
+            // btCancel
+            // 
+            this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.Location = new System.Drawing.Point(189, 183);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(71, 37);
+            this.btCancel.TabIndex = 2;
+            this.btCancel.Text = "Cancel";
+            this.btCancel.UseVisualStyleBackColor = true;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(81, 136);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(179, 26);
+            this.txtPass.TabIndex = 1;
             // 
             // txtTen
             // 
@@ -80,45 +112,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mật khẩu";
             // 
-            // txtPass
+            // label1
             // 
-            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(81, 136);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(179, 26);
-            this.txtPass.TabIndex = 1;
-            // 
-            // btCancel
-            // 
-            this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancel.Location = new System.Drawing.Point(189, 183);
-            this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(71, 37);
-            this.btCancel.TabIndex = 2;
-            this.btCancel.Text = "Cancel";
-            this.btCancel.UseVisualStyleBackColor = true;
-            // 
-            // btOk
-            // 
-            this.btOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btOk.Location = new System.Drawing.Point(103, 183);
-            this.btOk.Name = "btOk";
-            this.btOk.Size = new System.Drawing.Size(71, 37);
-            this.btOk.TabIndex = 2;
-            this.btOk.Text = "OK";
-            this.btOk.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(272, 22);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Đăng nhập hệ thống";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tên";
             // 
             // frmDangNhap
             // 
