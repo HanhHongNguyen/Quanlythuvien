@@ -59,7 +59,7 @@
             this.ToolsmiQuanLyNV.AutoSize = false;
             this.ToolsmiQuanLyNV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToolsmiQuanLyNV.Name = "ToolsmiQuanLyNV";
-            this.ToolsmiQuanLyNV.Size = new System.Drawing.Size(94, 20);
+            this.ToolsmiQuanLyNV.Size = new System.Drawing.Size(120, 20);
             this.ToolsmiQuanLyNV.Text = "Quản lý nhân viên";
             this.ToolsmiQuanLyNV.Click += new System.EventHandler(this.ToolsmiQuanLyNV_Click);
             // 
@@ -76,21 +76,21 @@
             // ToolsmiDocGia
             // 
             this.ToolsmiDocGia.Name = "ToolsmiDocGia";
-            this.ToolsmiDocGia.Size = new System.Drawing.Size(133, 22);
+            this.ToolsmiDocGia.Size = new System.Drawing.Size(180, 22);
             this.ToolsmiDocGia.Text = "Đọc giả ";
             this.ToolsmiDocGia.Click += new System.EventHandler(this.ToolsmiDocGia_Click);
             // 
             // ToolsmiMuonSach
             // 
             this.ToolsmiMuonSach.Name = "ToolsmiMuonSach";
-            this.ToolsmiMuonSach.Size = new System.Drawing.Size(133, 22);
+            this.ToolsmiMuonSach.Size = new System.Drawing.Size(180, 22);
             this.ToolsmiMuonSach.Text = "Mượn sách";
             this.ToolsmiMuonSach.Click += new System.EventHandler(this.ToolsmiMuonSach_Click);
             // 
             // ToolsmiTraSach
             // 
             this.ToolsmiTraSach.Name = "ToolsmiTraSach";
-            this.ToolsmiTraSach.Size = new System.Drawing.Size(133, 22);
+            this.ToolsmiTraSach.Size = new System.Drawing.Size(180, 22);
             this.ToolsmiTraSach.Text = "Trả sách";
             this.ToolsmiTraSach.Click += new System.EventHandler(this.ToolsmiTraSach_Click);
             // 
@@ -134,9 +134,11 @@
             this.ClientSize = new System.Drawing.Size(859, 449);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmQuanLyThuVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý thư viện";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmQuanLyThuVien_Load);

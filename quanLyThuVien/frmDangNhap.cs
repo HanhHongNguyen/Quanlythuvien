@@ -21,7 +21,7 @@ namespace quanLyThuVien
             string name = txtTen.Text.Trim();
             string pass = txtPass.Text;
 
-            if (name == " admin" && pass == "123")
+            if (name == "admin" && pass == "123")
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();

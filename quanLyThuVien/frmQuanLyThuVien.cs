@@ -36,7 +36,7 @@ namespace quanLyThuVien
 
         private void ToolsmiTraSach_Click(object sender, EventArgs e)
         {
-            frmTraSach ts = new frmTraSach();
+            lbMaDG ts = new lbMaDG();
             ts.ShowDialog();
         }
 
@@ -57,23 +57,19 @@ namespace quanLyThuVien
            
         }
 
+
         private void frmQuanLyThuVien_Load(object sender, EventArgs e)
         {
+            this.Show();
+            this.Enabled = false;
 
+            frmDangNhap dn = new frmDangNhap();
+            DialogResult result = dn.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.Enabled = true;
+            }
         }
-
-        //private void frmQuanLyThuVien_Load(object sender, EventArgs e)
-        //{
-        //    this.Show();
-        //    this.Enabled = false;
-
-        //    frmDangNhap dn = new frmDangNhap();
-        //    DialogResult result = dn.ShowDialog();
-
-        //    if (result == DialogResult.OK)
-        //    {
-        //        this.Enabled = true;
-        //    }
-        //}
     }
 }
