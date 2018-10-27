@@ -57,6 +57,11 @@ namespace quanLyThuVien
            
         }
 
+        private void frmQuanLyThuVien_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //private void frmQuanLyThuVien_Load(object sender, EventArgs e)
         //{
         //    this.Show();

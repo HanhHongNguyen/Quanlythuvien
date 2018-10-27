@@ -76,21 +76,21 @@
             // ToolsmiDocGia
             // 
             this.ToolsmiDocGia.Name = "ToolsmiDocGia";
-            this.ToolsmiDocGia.Size = new System.Drawing.Size(152, 22);
+            this.ToolsmiDocGia.Size = new System.Drawing.Size(133, 22);
             this.ToolsmiDocGia.Text = "Đọc giả ";
             this.ToolsmiDocGia.Click += new System.EventHandler(this.ToolsmiDocGia_Click);
             // 
             // ToolsmiMuonSach
             // 
             this.ToolsmiMuonSach.Name = "ToolsmiMuonSach";
-            this.ToolsmiMuonSach.Size = new System.Drawing.Size(152, 22);
+            this.ToolsmiMuonSach.Size = new System.Drawing.Size(133, 22);
             this.ToolsmiMuonSach.Text = "Mượn sách";
             this.ToolsmiMuonSach.Click += new System.EventHandler(this.ToolsmiMuonSach_Click);
             // 
             // ToolsmiTraSach
             // 
             this.ToolsmiTraSach.Name = "ToolsmiTraSach";
-            this.ToolsmiTraSach.Size = new System.Drawing.Size(152, 22);
+            this.ToolsmiTraSach.Size = new System.Drawing.Size(133, 22);
             this.ToolsmiTraSach.Text = "Trả sách";
             this.ToolsmiTraSach.Click += new System.EventHandler(this.ToolsmiTraSach_Click);
             // 
@@ -139,7 +139,7 @@
             this.Name = "frmQuanLyThuVien";
             this.Text = "Quản lý thư viện";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            
+            this.Load += new System.EventHandler(this.frmQuanLyThuVien_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
