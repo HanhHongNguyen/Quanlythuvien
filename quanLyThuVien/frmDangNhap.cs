@@ -40,5 +40,10 @@ namespace quanLyThuVien
             }
 
         }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

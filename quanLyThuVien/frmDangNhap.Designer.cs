@@ -129,6 +129,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDangNhap";
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
