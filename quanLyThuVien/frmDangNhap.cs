@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,32 +19,54 @@ namespace quanLyThuVien
 
         private void btOk_Click(object sender, EventArgs e)
         {
-            string name = txtTen.Text.Trim();
-            string pass = txtPass.Text;
 
-            if (name == "admin" && pass == "123")
+            string userName = txtTen.Text;
+            string password = txtPass.Text;
+            if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                MessageBox.Show("Can nhap Ten Dang Nhap va Mat Khau ", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                DialogResult result = MessageBox.Show(" name & pass khong dung!", "dang nhap", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                if (result == DialogResult.Cancel)
+                if (Login(userName, password) == true)
                 {
-                    Application.Exit();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                 {
-                    txtTen.Focus();
+                    DialogResult result = MessageBox.Show("Ten Dang Nhap hoac Mat Khau khong dung !", "Login", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    if (result == DialogResult.Cancel)
+                    {
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        txtTen.Focus();
+                    }
                 }
             }
-
         }
 
-        private void frmDangNhap_Load(object sender, EventArgs e)
+        private bool Login(string userName, string password)
         {
+            string cnStr = "Server = . ; Database = QuanLyThuVien ; Integrated security = true  ;";
+            SqlConnection cn = new SqlConnection(cnStr);
+            cn.Open();
 
+            String sql = "SELECT COUNT(Username) FROM Users WHERE Username = '" + userName + "' AND Password = '" + password + "'";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = sql;
+            cmd.CommandType = CommandType.Text;
+            int count = (int)cmd.ExecuteScalar();
+
+            cn.Close();
+
+            if (count == 1)
+                return true;
+            else
+                return false;
         }
     }
 }
