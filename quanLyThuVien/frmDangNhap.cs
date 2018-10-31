@@ -15,5 +15,35 @@ namespace quanLyThuVien
         {
             InitializeComponent();
         }
+
+        private void btOk_Click(object sender, EventArgs e)
+        {
+            string name = txtTen.Text.Trim();
+            string pass = txtPass.Text;
+
+            if (name == "admin" && pass == "123")
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show(" name & pass khong dung!", "dang nhap", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (result == DialogResult.Cancel)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    txtTen.Focus();
+                }
+            }
+
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

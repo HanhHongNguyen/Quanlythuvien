@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace quanLyThuVien
 {
-    public partial class frmTraSach : Form
+    public partial class lbMaDG : Form
     {
-        public frmTraSach()
+        public lbMaDG()
         {
             InitializeComponent();
         }
