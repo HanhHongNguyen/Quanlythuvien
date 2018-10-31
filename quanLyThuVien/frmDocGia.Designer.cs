@@ -105,6 +105,7 @@
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtEmail
             // 
@@ -214,6 +215,7 @@
             this.Name = "frmDocGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Độc giả";
+            this.Load += new System.EventHandler(this.frmDocGia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
