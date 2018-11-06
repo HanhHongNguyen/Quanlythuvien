@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocGia.cs" />
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +145,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thuvien.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BUS\BUS.csproj">
+      <Project>{ef068b66-df84-477c-bbe3-5af64005e823}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="DAO\DAO.csproj">
+      <Project>{1292a928-a48b-4264-8b11-19b12839267a}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="DTO\DTO.csproj">
+      <Project>{82a250b0-b7e8-4c89-b8cc-10ec3e1cdb99}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using DTO;
 namespace quanLyThuVien
 {
     public partial class frmDocGia : Form
