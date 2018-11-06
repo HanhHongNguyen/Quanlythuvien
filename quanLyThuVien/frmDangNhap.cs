@@ -7,7 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using DTO;
+using BUS;
 namespace quanLyThuVien
 {
     public partial class frmDangNhap : Form
@@ -20,53 +21,37 @@ namespace quanLyThuVien
         private void btOk_Click(object sender, EventArgs e)
         {
 
-            string userName = txtTen.Text;
-            string password = txtPass.Text;
-            if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
+            string user = txtTen.Text.Trim();
+            string pass = txtPass.Text;
+            LoginBUS loginBUS = new LoginBUS();
+            bool b = false;
+            try
             {
-                MessageBox.Show("Can nhap Ten Dang Nhap va Mat Khau ", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Account acc = new Account(user, pass);
+                b = loginBUS.Login(acc);
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Loi dang nhap.\n" + ex.Message, "Dang nhap");
+            }
+            if (b)
+            {
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
-                if (Login(userName, password) == true)
+                DialogResult result = MessageBox.Show("Username hoac password khong dung", "Đăng nhập", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (result == DialogResult.Cancel)
                 {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    Application.Exit();
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Ten Dang Nhap hoac Mat Khau khong dung !", "Login", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                    if (result == DialogResult.Cancel)
-                    {
-                        Application.Exit();
-                    }
-                    else
-                    {
-                        txtTen.Focus();
-                    }
+                    txtTen.Focus();
+                    txtPass.Text = "";
                 }
             }
-        }
-
-        private bool Login(string userName, string password)
-        {
-            string cnStr = "Server = . ; Database = QuanLyThuVien ; Integrated security = true  ;";
-            SqlConnection cn = new SqlConnection(cnStr);
-            cn.Open();
-
-            String sql = "SELECT COUNT(Username) FROM Users WHERE Username = '" + userName + "' AND Password = '" + password + "'";
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
-            cmd.CommandText = sql;
-            cmd.CommandType = CommandType.Text;
-            int count = (int)cmd.ExecuteScalar();
-
-            cn.Close();
-
-            if (count == 1)
-                return true;
-            else
-                return false;
         }
     }
 }
