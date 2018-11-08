@@ -33,12 +33,10 @@
             this.btSuaNv = new System.Windows.Forms.Button();
             this.btThemNv = new System.Windows.Forms.Button();
             this.txtSoDtNv = new System.Windows.Forms.TextBox();
-            this.txtDiaChiNv = new System.Windows.Forms.TextBox();
             this.txtHoTenNv = new System.Windows.Forms.TextBox();
             this.txtTimNv = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,12 +60,10 @@
             this.splitContainer1.Panel1.Controls.Add(this.btSuaNv);
             this.splitContainer1.Panel1.Controls.Add(this.btThemNv);
             this.splitContainer1.Panel1.Controls.Add(this.txtSoDtNv);
-            this.splitContainer1.Panel1.Controls.Add(this.txtDiaChiNv);
             this.splitContainer1.Panel1.Controls.Add(this.txtHoTenNv);
             this.splitContainer1.Panel1.Controls.Add(this.txtTimNv);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaNV);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -117,14 +113,6 @@
             this.txtSoDtNv.Size = new System.Drawing.Size(170, 26);
             this.txtSoDtNv.TabIndex = 11;
             // 
-            // txtDiaChiNv
-            // 
-            this.txtDiaChiNv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChiNv.Location = new System.Drawing.Point(186, 104);
-            this.txtDiaChiNv.Name = "txtDiaChiNv";
-            this.txtDiaChiNv.Size = new System.Drawing.Size(253, 26);
-            this.txtDiaChiNv.TabIndex = 12;
-            // 
             // txtHoTenNv
             // 
             this.txtHoTenNv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,15 +145,6 @@
             this.label6.Size = new System.Drawing.Size(84, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "Số ĐT:";
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Địa chỉ:";
             // 
             // label2
             // 
@@ -212,6 +191,7 @@
             this.Name = "frmQuanLyNhanVien";
             this.Text = "Quản lý nhân viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmQuanLyNhanVien_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -229,12 +209,10 @@
         private System.Windows.Forms.Button btSuaNv;
         private System.Windows.Forms.Button btThemNv;
         private System.Windows.Forms.TextBox txtSoDtNv;
-        private System.Windows.Forms.TextBox txtDiaChiNv;
         private System.Windows.Forms.TextBox txtHoTenNv;
         private System.Windows.Forms.TextBox txtTimNv;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;

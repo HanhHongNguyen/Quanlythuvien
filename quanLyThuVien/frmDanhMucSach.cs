@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using BUS;
+using DTO;
 namespace quanLyThuVien
 {
     public partial class frmDanhMucSach : Form
@@ -16,59 +17,14 @@ namespace quanLyThuVien
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btXoaMS_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTacGia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaSach_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenSach_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void frmDanhMucSach_Load(object sender, EventArgs e)
         {
-
+            List<Sach> list = new SachBUS().getSach();
+            dgvSach.DataSource = list;
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

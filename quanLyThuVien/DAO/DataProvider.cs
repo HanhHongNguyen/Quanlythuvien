@@ -68,5 +68,23 @@ namespace DAO
                 Disconnect();
             }
         }
+        public SqlDataReader myExecuteReader(string sql)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = sql;
+            cmd.CommandType = System.Data.CommandType.Text;
+           
+            try
+            {
+                return cmd.ExecuteReader();
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+           
+        }
     }
 }

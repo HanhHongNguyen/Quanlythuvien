@@ -26,7 +26,7 @@ namespace DAO
                     sdt = dr[3].ToString();
                     email = dr[4].ToString();
 
-                    DocGia dg = new DocGia(id, name, address,sdt,email);
+                    DocGia dg = new DocGia(id, name, address, sdt, email);
                     list.Add(dg);
                 }
                 dr.Close();
@@ -42,8 +42,8 @@ namespace DAO
                 Disconnect();
             }
         }
-       
 
-           
+
+
     }
 }

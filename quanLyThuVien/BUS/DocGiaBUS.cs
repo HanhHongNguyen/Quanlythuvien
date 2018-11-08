@@ -6,7 +6,7 @@ using DTO;
 using DAO;
 namespace BUS
 {
-    class DocGiaBUS
+    public class DocGiaBUS
     {
         public List<DocGia> getDocGia()
         {

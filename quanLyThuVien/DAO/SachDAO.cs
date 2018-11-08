@@ -11,8 +11,8 @@ namespace DAO
         public List<Sach> getSach()
         {
             string sql = "SELECT * FROM Sach";
-            string idSach,TenSach, idTacGia,idTheLoai, TinhTrang,NXB, GiaThue;
-           
+            string idSach, TenSach, idTacGia, idTheLoai, TinhTrang, NXB, GiaThue;
+
             List<Sach> list = new List<Sach>();
             Connect();
 
@@ -28,7 +28,7 @@ namespace DAO
                     NXB = dr[4].ToString(); ;
                     GiaThue = dr[5].ToString();
                     TinhTrang = dr[6].ToString();
-                    Sach s = new Sach(idSach, TenSach,idTacGia, idTheLoai, NXB,GiaThue,TinhTrang);
+                    Sach s = new Sach(idSach, TenSach, idTacGia, idTheLoai, NXB, GiaThue, TinhTrang);
                     list.Add(s);
                 }
                 dr.Close();
