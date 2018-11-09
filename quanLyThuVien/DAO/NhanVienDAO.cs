@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using DTO;
@@ -39,6 +40,26 @@ namespace DAO
             {
                 Disconnect();
             }
+        }
+
+        public int Add(NhanVien nhanVien)
+        {
+            string sql = "INSTER INTO NhanVien VALUES( @id, @name, @phone)";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("id", nhanVien.IDNhanVien));
+            parameters.Add(new SqlParameter("name", nhanVien.TenNV));
+            parameters.Add(new SqlParameter("phone", nhanVien.SDT));
+
+            try
+            {
+                return (myExecuteNonQuery(sql, CommandType.Text, parameters));
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+
         }
     }
 }

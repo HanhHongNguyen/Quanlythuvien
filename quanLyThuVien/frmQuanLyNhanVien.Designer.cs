@@ -104,6 +104,7 @@
             this.btThemNv.TabIndex = 18;
             this.btThemNv.Text = "Thêm";
             this.btThemNv.UseVisualStyleBackColor = true;
+            this.btThemNv.Click += new System.EventHandler(this.btThemNv_Click);
             // 
             // txtSoDtNv
             // 
@@ -126,7 +127,7 @@
             this.txtTimNv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimNv.Location = new System.Drawing.Point(186, 192);
             this.txtTimNv.Name = "txtTimNv";
-            this.txtTimNv.Size = new System.Drawing.Size(287, 26);
+            this.txtTimNv.Size = new System.Drawing.Size(233, 26);
             this.txtTimNv.TabIndex = 14;
             // 
             // txtMaNV
