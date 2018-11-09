@@ -12,7 +12,7 @@ namespace DAO
         SqlConnection cn;
         public DataProvider()
         {
-            string cnStr = "Server = DESKTOP-FOQGS4M\\SQLEXPRESS; Database = QuanLyThuVien; Integrated Security = true;";
+            string cnStr = "Data Source=ADMIN;Initial Catalog=QuanLyThuVien;Integrated Security=True";
             cn = new SqlConnection(cnStr);
         }
         public void Connect()

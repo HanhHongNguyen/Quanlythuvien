@@ -150,9 +150,8 @@
             this.ClientSize = new System.Drawing.Size(806, 496);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmTheLoaiSach";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thể loại sách";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
