@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-<<<<<<< HEAD
-=======
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dgvPM = new System.Windows.Forms.DataGridView();
             this.dgvSachChon = new System.Windows.Forms.DataGridView();
@@ -45,7 +42,6 @@
             this.idtacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tinhtrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
->>>>>>> phuong
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ngayMuon = new System.Windows.Forms.DateTimePicker();
@@ -58,19 +54,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaPM = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.label6 = new System.Windows.Forms.Label();
             this.btnTim = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.dgvMenuSach = new System.Windows.Forms.DataGridView();
             this.dgvSachChon = new System.Windows.Forms.DataGridView();
-=======
             this.btnTim = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
->>>>>>> phuong
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -82,15 +74,12 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachChon)).BeginInit();
-<<<<<<< HEAD
-=======
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
->>>>>>> phuong
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -111,7 +100,6 @@
             this.splitContainer1.SplitterDistance = 330;
             this.splitContainer1.TabIndex = 0;
             // 
-<<<<<<< HEAD
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(88, 250);
@@ -120,7 +108,6 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "LƯU";
             this.btnSave.UseVisualStyleBackColor = true;
-=======
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -170,7 +157,6 @@
             this.dgvSachChon.ReadOnly = true;
             this.dgvSachChon.Size = new System.Drawing.Size(613, 247);
             this.dgvSachChon.TabIndex = 0;
->>>>>>> phuong
             // 
             // MaSach
             // 
@@ -380,15 +366,9 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Mã PM :";
             // 
-<<<<<<< HEAD
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 334);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "SÁCH ĐƯỢC CHỌN :";
+           
             // 
             // btnTim
             // 
@@ -405,7 +385,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(128, 20);
             this.textBox6.TabIndex = 1;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // splitContainer2
             // 
@@ -416,7 +395,6 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.dgvMenuSach);
             // 
             // splitContainer2.Panel2
             // 
@@ -427,12 +405,6 @@
             // 
             // dgvMenuSach
             // 
-            this.dgvMenuSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMenuSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMenuSach.Location = new System.Drawing.Point(0, 0);
-            this.dgvMenuSach.Name = "dgvMenuSach";
-            this.dgvMenuSach.Size = new System.Drawing.Size(510, 226);
-            this.dgvMenuSach.TabIndex = 0;
             // 
             // dgvSachChon
             // 
@@ -442,7 +414,6 @@
             this.dgvSachChon.Name = "dgvSachChon";
             this.dgvSachChon.Size = new System.Drawing.Size(510, 247);
             this.dgvSachChon.TabIndex = 0;
-=======
             // btnTim
             // 
             this.btnTim.Location = new System.Drawing.Point(165, 13);
@@ -478,7 +449,6 @@
             this.listView1.Size = new System.Drawing.Size(324, 205);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
->>>>>>> phuong
             // 
             // frmMuonSach
             // 
@@ -487,11 +457,7 @@
             this.ClientSize = new System.Drawing.Size(947, 477);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmMuonSach";
-<<<<<<< HEAD
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-=======
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
->>>>>>> phuong
             this.Text = "Mượn sách";
             this.Load += new System.EventHandler(this.frmMuonSach_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -506,8 +472,6 @@
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachChon)).EndInit();
-<<<<<<< HEAD
-=======
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.Panel2.PerformLayout();
@@ -516,7 +480,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
->>>>>>> phuong
             this.ResumeLayout(false);
 
         }

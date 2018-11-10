@@ -32,7 +32,7 @@ namespace DAO
         public List<TheLoai> getTL()
         {
             string sql = "SELECT * FROM TheLoai";
-            string idTheLoai, tenTL;
+            string maTL, tenTL;
 
             List<TheLoai> list = new List<TheLoai>();
             Connect();
@@ -43,12 +43,7 @@ namespace DAO
                 {
                     maTL = dr[0].ToString();
                     tenTL = dr[1].ToString();
-
-
                     TheLoai tl = new TheLoai(maTL, tenTL);
-                    idTheLoai = dr[0].ToString();
-                    tenTL = dr[1].ToString();
-                    TheLoai tl= new TheLoai(idTheLoai, tenTL);
                     list.Add(tl);
                 }
                 dr.Close();

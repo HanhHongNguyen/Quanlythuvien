@@ -9,7 +9,6 @@ namespace BUS
 {
     public class TheLoaiBUS
     {
-        private TheLoaiDAO theLoaiSachDAO = new TheLoaiDAO();
         public List<TheLoai> getTL()
         {
             try
@@ -26,20 +25,7 @@ namespace BUS
         {
             try
             {
-                return theLoaiSachDAO.Add(theLoaiSach);
-            }
-            catch (SqlException ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public List<TheLoai> getTL()
-        {
-            try
-            {
-                return new TheLoaiDAO().getTL();
+                return new TheLoaiDAO().Add(theLoaiSach);
             }
             catch (SqlException ex)
             {

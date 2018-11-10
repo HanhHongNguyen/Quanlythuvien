@@ -72,7 +72,7 @@ namespace DAO
             Parameters.Add(new SqlParameter("MaDocGia", id));
             try
             {
-                int sohang = myExcuteNonQuery(sql, CommandType.Text, Parameters);
+                int sohang = myExecuteNonQuery(sql, CommandType.Text, Parameters);
                 return sohang;
             }
             catch (SqlException ex)

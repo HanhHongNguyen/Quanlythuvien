@@ -8,12 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DTO;
 using BUS;
-<<<<<<< HEAD
 using System.Data.SqlClient;
-
-
-=======
->>>>>>> phuong
 namespace quanLyThuVien
 {
     public partial class frmTheLoaiSach : Form
@@ -41,7 +36,7 @@ namespace quanLyThuVien
             try
             {
                 int numerOfRows = new TheLoaiBUS().Add(theLoai);
-                dgvTL.DataSource = theloaisachBUS.getTL();
+                dgvTL.DataSource = theloaiBUS.getTL();
             }
             catch (SqlException ex)
             {
