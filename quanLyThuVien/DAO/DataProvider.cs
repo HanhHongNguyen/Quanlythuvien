@@ -13,7 +13,7 @@ namespace DAO
         SqlConnection cn;
         public DataProvider()
         {
-            string cnStr = "Data Source=ADMIN;Initial Catalog=QuanLyThuVien;Integrated Security=True";
+            string cnStr = "Data Source=ADMIN; Initial Catalog=QuanLyThuVien; Integrated Security=True";
             cn = new SqlConnection(cnStr);
         }
         public void Connect()
