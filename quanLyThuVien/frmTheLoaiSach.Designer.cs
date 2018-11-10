@@ -96,6 +96,7 @@
             this.btThem.TabIndex = 11;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // combTenTL
             // 
@@ -105,6 +106,7 @@
             this.combTenTL.Name = "combTenTL";
             this.combTenTL.Size = new System.Drawing.Size(205, 28);
             this.combTenTL.TabIndex = 8;
+            this.combTenTL.SelectedIndexChanged += new System.EventHandler(this.combTenTL_SelectedIndexChanged);
             // 
             // txtMaTL
             // 
@@ -152,6 +154,7 @@
             this.Name = "frmTheLoaiSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thể loại sách";
+            this.Load += new System.EventHandler(this.frmTheLoaiSach_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
