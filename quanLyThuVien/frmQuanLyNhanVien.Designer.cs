@@ -189,8 +189,8 @@
             this.ClientSize = new System.Drawing.Size(824, 431);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmQuanLyNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmQuanLyNhanVien_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

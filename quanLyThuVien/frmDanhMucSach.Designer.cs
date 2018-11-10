@@ -257,6 +257,8 @@
             // 
             // dgvSach
             // 
+            this.dgvSach.AllowUserToAddRows = false;
+            this.dgvSach.AllowUserToDeleteRows = false;
             this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idSach,
@@ -271,6 +273,7 @@
             this.dgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSach.Location = new System.Drawing.Point(0, 0);
             this.dgvSach.Name = "dgvSach";
+            this.dgvSach.ReadOnly = true;
             this.dgvSach.Size = new System.Drawing.Size(491, 478);
             this.dgvSach.TabIndex = 0;
             // 
@@ -279,48 +282,57 @@
             this.idSach.DataPropertyName = "IDSach";
             this.idSach.HeaderText = "Mã Sách";
             this.idSach.Name = "idSach";
+            this.idSach.ReadOnly = true;
             // 
             // nameSach
             // 
             this.nameSach.DataPropertyName = "TenSach";
             this.nameSach.HeaderText = "Tên sách";
             this.nameSach.Name = "nameSach";
+            this.nameSach.ReadOnly = true;
+            this.nameSach.Width = 250;
             // 
             // idTacgia
             // 
             this.idTacgia.DataPropertyName = "IDTacGia";
             this.idTacgia.HeaderText = "Mã tác giả";
             this.idTacgia.Name = "idTacgia";
+            this.idTacgia.ReadOnly = true;
             // 
             // idTL
             // 
             this.idTL.DataPropertyName = "IDTheLoai";
             this.idTL.HeaderText = "Mã thể loại";
             this.idTL.Name = "idTL";
+            this.idTL.ReadOnly = true;
             // 
             // nxb
             // 
             this.nxb.DataPropertyName = "NXB";
             this.nxb.HeaderText = "NXB";
             this.nxb.Name = "nxb";
+            this.nxb.ReadOnly = true;
             // 
             // giathue
             // 
             this.giathue.DataPropertyName = "GiaThue";
             this.giathue.HeaderText = "Giá thuê";
             this.giathue.Name = "giathue";
+            this.giathue.ReadOnly = true;
             // 
             // tinhtrang
             // 
             this.tinhtrang.DataPropertyName = "tinhtrang";
             this.tinhtrang.HeaderText = "Tình trạng";
             this.tinhtrang.Name = "tinhtrang";
+            this.tinhtrang.ReadOnly = true;
             // 
             // theloai
             // 
             this.theloai.DataPropertyName = "theloai";
             this.theloai.HeaderText = "Column1";
             this.theloai.Name = "theloai";
+            this.theloai.ReadOnly = true;
             this.theloai.Visible = false;
             // 
             // tacgia
@@ -328,6 +340,7 @@
             this.tacgia.DataPropertyName = "tacgia";
             this.tacgia.HeaderText = "Column1";
             this.tacgia.Name = "tacgia";
+            this.tacgia.ReadOnly = true;
             this.tacgia.Visible = false;
             // 
             // frmDanhMucSach
@@ -339,8 +352,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmDanhMucSach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDanhMucSach";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDanhMucSach_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

@@ -46,9 +46,9 @@ namespace DAO
 
         public int DeleteDG (string id)
         {
-            string sql = "DELETE FROM DocGia WHERE id = '" + id + "'";
+            string sql = "DELETE FROM DocGia WHERE MaDocGia = '" + id + "'";
             List<SqlParameter> Parameters = new List<SqlParameter>();   
-            Parameters.Add(new SqlParameter("@id", id));
+            Parameters.Add(new SqlParameter("MaDocGia", id));
             try
             {
                 int sohang = myExcuteNonQuery(sql, CommandType.Text, Parameters);

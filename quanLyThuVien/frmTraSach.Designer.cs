@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMaPT = new System.Windows.Forms.TextBox();
-            this.btnTimPM = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMaPM = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbMaDocGia = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.lbTienThue = new System.Windows.Forms.Label();
+            this.lbMaDocGia = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnTimPM = new System.Windows.Forms.Button();
+            this.txtMaPM = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMaPT = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dgvPM = new System.Windows.Forms.DataGridView();
             this.dgvSachMuon = new System.Windows.Forms.DataGridView();
             this.dgvPT = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -91,6 +91,106 @@
             this.splitContainer1.SplitterDistance = 342;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(103, 282);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "LƯU";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // lbTienThue
+            // 
+            this.lbTienThue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbTienThue.Location = new System.Drawing.Point(103, 161);
+            this.lbTienThue.Name = "lbTienThue";
+            this.lbTienThue.Size = new System.Drawing.Size(126, 23);
+            this.lbTienThue.TabIndex = 4;
+            // 
+            // lbMaDocGia
+            // 
+            this.lbMaDocGia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbMaDocGia.Location = new System.Drawing.Point(103, 192);
+            this.lbMaDocGia.Name = "lbMaDocGia";
+            this.lbMaDocGia.Size = new System.Drawing.Size(126, 27);
+            this.lbMaDocGia.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 206);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Mã độc giả :";
+            // 
+            // btnTimPM
+            // 
+            this.btnTimPM.Location = new System.Drawing.Point(250, 12);
+            this.btnTimPM.Name = "btnTimPM";
+            this.btnTimPM.Size = new System.Drawing.Size(75, 23);
+            this.btnTimPM.TabIndex = 2;
+            this.btnTimPM.Text = "TÌM";
+            this.btnTimPM.UseVisualStyleBackColor = true;
+            // 
+            // txtMaPM
+            // 
+            this.txtMaPM.Location = new System.Drawing.Point(91, 14);
+            this.txtMaPM.Name = "txtMaPM";
+            this.txtMaPM.Size = new System.Drawing.Size(126, 20);
+            this.txtMaPM.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mã PM :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tiền thuê :";
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Location = new System.Drawing.Point(103, 132);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(126, 20);
+            this.txtMaNV.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 135);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã NV :";
+            // 
+            // txtMaPT
+            // 
+            this.txtMaPT.Location = new System.Drawing.Point(103, 106);
+            this.txtMaPT.Name = "txtMaPT";
+            this.txtMaPT.Size = new System.Drawing.Size(126, 20);
+            this.txtMaPT.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã PT :";
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -109,72 +209,6 @@
             this.splitContainer2.SplitterDistance = 229;
             this.splitContainer2.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 109);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã PT :";
-            // 
-            // txtMaPT
-            // 
-            this.txtMaPT.Location = new System.Drawing.Point(103, 106);
-            this.txtMaPT.Name = "txtMaPT";
-            this.txtMaPT.Size = new System.Drawing.Size(126, 20);
-            this.txtMaPT.TabIndex = 1;
-            // 
-            // btnTimPM
-            // 
-            this.btnTimPM.Location = new System.Drawing.Point(250, 12);
-            this.btnTimPM.Name = "btnTimPM";
-            this.btnTimPM.Size = new System.Drawing.Size(75, 23);
-            this.btnTimPM.TabIndex = 2;
-            this.btnTimPM.Text = "TÌM";
-            this.btnTimPM.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã PM :";
-            // 
-            // txtMaPM
-            // 
-            this.txtMaPM.Location = new System.Drawing.Point(91, 14);
-            this.txtMaPM.Name = "txtMaPM";
-            this.txtMaPM.Size = new System.Drawing.Size(126, 20);
-            this.txtMaPM.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Mã NV :";
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Location = new System.Drawing.Point(103, 132);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(126, 20);
-            this.txtMaNV.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tiền thuê :";
-            // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -191,31 +225,6 @@
             this.splitContainer3.Size = new System.Drawing.Size(495, 229);
             this.splitContainer3.SplitterDistance = 302;
             this.splitContainer3.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 206);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Mã độc giả :";
-            // 
-            // lbMaDocGia
-            // 
-            this.lbMaDocGia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbMaDocGia.Location = new System.Drawing.Point(103, 192);
-            this.lbMaDocGia.Name = "lbMaDocGia";
-            this.lbMaDocGia.Size = new System.Drawing.Size(126, 27);
-            this.lbMaDocGia.TabIndex = 3;
-            // 
-            // lbTienThue
-            // 
-            this.lbTienThue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbTienThue.Location = new System.Drawing.Point(103, 161);
-            this.lbTienThue.Name = "lbTienThue";
-            this.lbTienThue.Size = new System.Drawing.Size(126, 23);
-            this.lbTienThue.TabIndex = 4;
             // 
             // dgvPM
             // 
@@ -244,15 +253,6 @@
             this.dgvPT.Size = new System.Drawing.Size(495, 234);
             this.dgvPT.TabIndex = 0;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(103, 282);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "LƯU";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // lbMaDG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,7 +261,6 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "lbMaDG";
             this.Text = "Trả sách";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

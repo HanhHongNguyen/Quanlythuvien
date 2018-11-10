@@ -122,13 +122,14 @@
             this.dgvTacGia.Size = new System.Drawing.Size(530, 450);
             this.dgvTacGia.TabIndex = 0;
             // 
-            // TacGia
+            // frmTacGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "TacGia";
+            this.Name = "frmTacGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TacGia";
             this.Load += new System.EventHandler(this.frmTacGia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
