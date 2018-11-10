@@ -15,17 +15,17 @@ namespace quanLyThuVien
 {
     public partial class frmTheLoaiSach : Form
     {
-        TheLoaiSachBUS theloaisachBUS;
-        private List<TheLoaiSach> list;
+        TheLoaiBUS theloaisachBUS;
+        private List<TheLoai> list;
         public frmTheLoaiSach()
         {
             InitializeComponent();
-            theloaisachBUS = new TheLoaiSachBUS();
+            theloaisachBUS = new TheLoaiBUS();
         }
 
         private void frmTheLoaiSach_Load(object sender, EventArgs e)
         {
-            List<TheLoaiSach> list = new TheLoaiSachBUS().getTL();
+            List<TheLoai> list = new TheLoaiBUS().getTL();
             dgvTL.DataSource = list;
         }
 
@@ -36,11 +36,11 @@ namespace quanLyThuVien
             tenTL = txtTheLoai.Text;
             
 
-            TheLoaiSach theLoai = new TheLoaiSach(maTL, tenTL);
+            TheLoai theLoai = new TheLoai(maTL, tenTL);
 
             try
             {
-                int numerOfRows = new TheLoaiSachBUS().Add(theLoai);
+                int numerOfRows = new TheLoaiBUS().Add(theLoai);
                 dgvTL.DataSource = theloaisachBUS.getTL();
             }
             catch (SqlException ex)

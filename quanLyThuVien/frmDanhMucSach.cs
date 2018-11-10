@@ -25,7 +25,7 @@ namespace quanLyThuVien
         {
             List<Sach> list = new SachBUS().getSach();
             dgvSach.DataSource = list;
-            List<TheLoaiSach> list1 = new TheLoaiSachBUS().getTL();
+            List<TheLoai> list1 = new TheLoaiBUS().getTL();
             comboTheLoai.DataSource = list1;
             comboTheLoai.DisplayMember = "TenTheLoai";
             //comboTheLoai.ValueMember = "MaTheLoai";
