@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,47 @@ namespace quanLyThuVien
             dgvSach.DataSource = list;
         }
 
-        
+        //private void btnThem_Click(object sender, EventArgs e)
+        //{
+        //    string idsach, tensach, idtacgia, idtheloai, tinhtrang;
+        //    int result = 0;
+        //    int nxb, giathue;
+        //    idsach = txtMaSach.Text;
+        //    tensach = txtTenSach.Text;
+        //    idtacgia = txtMaTG.Text ;
+        //    idtheloai = txtMaTL.Text;
+        //    nxb = int.Parse(txtNXB.Text);
+        //    giathue = int.Parse(txtGiaThue.Text);
+        //    tinhtrang = txtTinhTrang.Text;
+        //    Sach s = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, giathue, tinhtrang);
+
+        //    try
+        //    {
+        //        result = new SachBUS().themSach(s);
+        //    }
+        //    catch (SqlException ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //    if(result < 1)
+        //    {
+        //        MessageBox.Show("Them that bai");
+        //    }
+        //    else
+        //    {
+        //        DataGridViewRow row = new DataGridViewRow();
+        //        DataGridViewCell cell; 
+        //        cell = new DataGridViewTextBoxCell();
+        //        cell.Value = txtMaSach.Text;
+        //        cell.Value = txtTenSach.Text;
+        //        cell.Value = txtMaSach.Text;
+        //        cell.Value = txtMaSach.Text;
+        //        cell.Value = txtMaSach.Text;
+        //        row.Cells.Add(cell); 
+        //        dgvSach.Rows.Add(row); 
+        //    }
+
+        //}
     }
 }

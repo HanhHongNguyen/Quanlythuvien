@@ -38,6 +38,7 @@
             this.ToolsmiTheLoaiSach = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsmiDanhMucSach = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsmiBaoCao = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTacGia = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,21 +77,21 @@
             // ToolsmiDocGia
             // 
             this.ToolsmiDocGia.Name = "ToolsmiDocGia";
-            this.ToolsmiDocGia.Size = new System.Drawing.Size(180, 22);
+            this.ToolsmiDocGia.Size = new System.Drawing.Size(133, 22);
             this.ToolsmiDocGia.Text = "Đọc giả ";
             this.ToolsmiDocGia.Click += new System.EventHandler(this.ToolsmiDocGia_Click);
             // 
             // ToolsmiMuonSach
             // 
             this.ToolsmiMuonSach.Name = "ToolsmiMuonSach";
-            this.ToolsmiMuonSach.Size = new System.Drawing.Size(180, 22);
+            this.ToolsmiMuonSach.Size = new System.Drawing.Size(133, 22);
             this.ToolsmiMuonSach.Text = "Mượn sách";
             this.ToolsmiMuonSach.Click += new System.EventHandler(this.ToolsmiMuonSach_Click);
             // 
             // ToolsmiTraSach
             // 
             this.ToolsmiTraSach.Name = "ToolsmiTraSach";
-            this.ToolsmiTraSach.Size = new System.Drawing.Size(180, 22);
+            this.ToolsmiTraSach.Size = new System.Drawing.Size(133, 22);
             this.ToolsmiTraSach.Text = "Trả sách";
             this.ToolsmiTraSach.Click += new System.EventHandler(this.ToolsmiTraSach_Click);
             // 
@@ -98,7 +99,8 @@
             // 
             this.ToolsmiQuanLySach.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolsmiTheLoaiSach,
-            this.ToolsmiDanhMucSach});
+            this.ToolsmiDanhMucSach,
+            this.mnuTacGia});
             this.ToolsmiQuanLySach.Name = "ToolsmiQuanLySach";
             this.ToolsmiQuanLySach.Size = new System.Drawing.Size(87, 20);
             this.ToolsmiQuanLySach.Text = "Quản lý sách";
@@ -106,14 +108,14 @@
             // ToolsmiTheLoaiSach
             // 
             this.ToolsmiTheLoaiSach.Name = "ToolsmiTheLoaiSach";
-            this.ToolsmiTheLoaiSach.Size = new System.Drawing.Size(156, 22);
+            this.ToolsmiTheLoaiSach.Size = new System.Drawing.Size(180, 22);
             this.ToolsmiTheLoaiSach.Text = "Thể loại sách";
             this.ToolsmiTheLoaiSach.Click += new System.EventHandler(this.ToolsmiTheLoaiSach_Click);
             // 
             // ToolsmiDanhMucSach
             // 
             this.ToolsmiDanhMucSach.Name = "ToolsmiDanhMucSach";
-            this.ToolsmiDanhMucSach.Size = new System.Drawing.Size(156, 22);
+            this.ToolsmiDanhMucSach.Size = new System.Drawing.Size(180, 22);
             this.ToolsmiDanhMucSach.Text = "Danh mục sách";
             this.ToolsmiDanhMucSach.Click += new System.EventHandler(this.ToolsmiDanhMucSach_Click);
             // 
@@ -123,6 +125,13 @@
             this.ToolsmiBaoCao.Size = new System.Drawing.Size(61, 20);
             this.ToolsmiBaoCao.Text = "Báo cáo";
             this.ToolsmiBaoCao.Click += new System.EventHandler(this.ToolsmiBaoCao_Click);
+            // 
+            // mnuTacGia
+            // 
+            this.mnuTacGia.Name = "mnuTacGia";
+            this.mnuTacGia.Size = new System.Drawing.Size(180, 22);
+            this.mnuTacGia.Text = "Tác giả";
+            this.mnuTacGia.Click += new System.EventHandler(this.mnuTacGia_Click);
             // 
             // frmQuanLyThuVien
             // 
@@ -161,6 +170,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolsmiTraSach;
         private System.Windows.Forms.ToolStripMenuItem ToolsmiBaoCao;
         private System.Windows.Forms.ToolStripMenuItem ToolsmiQuanLyNV;
+        private System.Windows.Forms.ToolStripMenuItem mnuTacGia;
     }
 }
 

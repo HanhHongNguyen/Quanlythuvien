@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using DTO;
 using DAO;
-using System.Data.SqlClient;
-
+using DTO;
 namespace BUS
 {
-    public class DocGiaBUS
+    public class PhieuMuonBUS
     {
-        public List<DocGia> getDocGia()
+        public List<PhieuMuon> getPM()
         {
             try
             {
-                return new DocGiaDAO().getDocGia();
+                return new PhieuMuonDAO().getPM();
             }
             catch (SqlException ex)
             {
@@ -22,11 +21,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public int DeleteDG(string id)
+        public List<Sach> getSachMuon()
         {
             try
             {
-                return new DocGiaDAO().DeleteDG(id);
+                return new PhieuMuonDAO().getSachMuon();
             }
             catch (SqlException ex)
             {

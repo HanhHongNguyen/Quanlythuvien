@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using DTO;
+using System.Data;
 namespace DAO
 {
     public class DocGiaDAO : DataProvider
@@ -43,7 +44,22 @@ namespace DAO
             }
         }
 
+        public int DeleteDG (string id)
+        {
+            string sql = "DELETE FROM DocGia WHERE id = '" + id + "'";
+            List<SqlParameter> Parameters = new List<SqlParameter>();   
+            Parameters.Add(new SqlParameter("@id", id));
+            try
+            {
+                int sohang = myExcuteNonQuery(sql, CommandType.Text, Parameters);
+                return sohang;
+            }
+            catch (SqlException ex)
+            {
 
+                throw ex;
+            }
+        }
 
     }
 }

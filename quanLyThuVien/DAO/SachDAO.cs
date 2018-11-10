@@ -11,7 +11,8 @@ namespace DAO
         public List<Sach> getSach()
         {
             string sql = "SELECT * FROM Sach";
-            string idSach, TenSach, idTacGia, idTheLoai, TinhTrang, NXB, GiaThue;
+            string idSach, TenSach, idTacGia, idTheLoai, TinhTrang;
+            int NXB, GiaThue;
 
             List<Sach> list = new List<Sach>();
             Connect();
@@ -25,8 +26,8 @@ namespace DAO
                     TenSach = dr[1].ToString();
                     idTacGia = dr[2].ToString();
                     idTheLoai = dr[3].ToString();
-                    NXB = dr[4].ToString(); ;
-                    GiaThue = dr[5].ToString();
+                    NXB = int.Parse(dr[4].ToString()); 
+                    GiaThue = int.Parse(dr[5].ToString());
                     TinhTrang = dr[6].ToString();
                     Sach s = new Sach(idSach, TenSach, idTacGia, idTheLoai, NXB, GiaThue, TinhTrang);
                     list.Add(s);
@@ -44,5 +45,20 @@ namespace DAO
                 Disconnect();
             }
         }
+        //public int themSach (Sach s)
+        //{
+        //    try
+        //    {
+        //        string sql = "INSERT INTO DocGia VALUES ('" + s.IDSach + "',N'" + s.TenSach + "',N'" + s.IDTacGia + "',N'"
+        //                + "',N'" + s.IDTheLoai + "',N'" + s.NXB + "',N'" + s.GiaThue + "',N'" + s.TinhTrang + "')'";
+        //        return myExcuteNonQuery(sql);
+        //    }
+        //    catch (Sqlxception ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //}
+        
     }
 }

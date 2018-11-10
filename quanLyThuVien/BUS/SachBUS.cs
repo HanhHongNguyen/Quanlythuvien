@@ -12,6 +12,11 @@ namespace BUS
         {
             return new SachDAO().getSach();
         }
+        
+        //public int themSach(Sach s)
+        //{
+        //    return new SachDAO().themSach(s);
+        //}
     }
 }
 

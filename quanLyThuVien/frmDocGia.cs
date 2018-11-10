@@ -21,8 +21,29 @@ namespace quanLyThuVien
         {
             List<DocGia> list = new DocGiaBUS().getDocGia();
             dgvDocGia.DataSource = list;
+            txtMaDG.DataBindings.Add("Text", list, "MaDG");
+            txtTenDG.DataBindings.Add("Text", list, "TenDG");
+            txtDiaChiDG.DataBindings.Add("Text", list, "DiaChi");
+            txtSDT.DataBindings.Add("Text", list, "SDT");
+            txtEmail.DataBindings.Add("Text", list, "Email");
         }
-        
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string MaDG = txtMaDG.Text;
+            try
+            {
+                int sohang = new DocGiaBUS().DeleteDG(MaDG);
+                if (sohang > 0)
+                    dgvDocGia.DataSource = new DocGiaBUS().getDocGia();
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Xoa that bai", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         //private void btnThem_Click(object sender, EventArgs e)
         //{
         //    string cnStr = " Server =. ; Database = QuanLyThuVien ; Integrated Security = true";
@@ -50,6 +71,6 @@ namespace quanLyThuVien
 
         //}
 
-       
+
     }
 }

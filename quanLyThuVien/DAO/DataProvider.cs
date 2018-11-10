@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -74,7 +75,7 @@ namespace DAO
             cmd.Connection = cn;
             cmd.CommandText = sql;
             cmd.CommandType = System.Data.CommandType.Text;
-           
+
             try
             {
                 return cmd.ExecuteReader();
@@ -84,7 +85,35 @@ namespace DAO
 
                 throw ex;
             }
-           
+
+        }
+
+        public int myExcuteNonQuery(string sql, CommandType type, List<SqlParameter> Parameters)
+        {
+            SqlCommand cmd = new SqlCommand(sql,cn);
+            cmd.CommandType = type;
+            Connect();
+            if (Parameters != null)
+            {
+                foreach(SqlParameter i in Parameters)
+                {
+                    cmd.Parameters.Add(i); 
+                }
+            }
+            try
+            {
+                int number = cmd.ExecuteNonQuery();
+                return number;
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Disconnect();
+            }
         }
     }
 }
