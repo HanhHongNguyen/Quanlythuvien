@@ -12,7 +12,7 @@ namespace DAO
     {
         public bool Login(Account acc)
         {
-            string sql = "SELECT COUNT (Username) FROM Users_taolao WHERE UserName = '" + acc.Username + "' AND Password = '" + acc.Password + "'";
+            string sql = "SELECT COUNT (Username) FROM Users WHERE UserName = '" + acc.Username + "' AND Password = '" + acc.Password + "'";
             int number;
             try
             {

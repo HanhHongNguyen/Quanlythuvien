@@ -60,6 +60,21 @@ namespace DAO
                 throw ex;
             }
         }
+        //public int UpdateDG(DocGia dg)
+        //{
 
+        //    string sql = "UPDATE Sinhvien SET MaDocGia='" + dg.MaDG + "', TenDocGia = N'" + dg.TenDG + "', DiaChi= N'" + dg.DiaChi + "', SDT= N'" + dg.SDT + "',Email= N'" + dg.Email + "' where MaDocGia = '" + dg.MaDG + "'";
+
+        //    try
+        //    {
+        //        int sohang = myExcuteNonQuery(sql, CommandType.Text, Parameters);
+        //        return sohang;
+        //    }
+        //    catch (SqlException ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //}
     }
 }
