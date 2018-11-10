@@ -36,7 +36,7 @@ namespace quanLyThuVien
             try
             {
                 int numerOfRows = new TheLoaiBUS().Add(theLoai);
-                dgvTL.DataSource = theloaiBUS.getTL();
+                dgvTL.DataSource = new TheLoaiBUS().getTL();
             }
             catch (SqlException ex)
             {
