@@ -7,29 +7,13 @@ using DAO;
 using DTO;
 namespace BUS
 {
-    public class SachBUS
+    public class PhieuMuonBUS
     {
-        SachDAO sachDAO = new SachDAO();
-        public List<Sach> getSach()
+        public List<PhieuMuon> getPM()
         {
             try
             {
-                return new SachDAO().getSach();
-            }
-            catch (SqlException ex)
-            {
-
-                throw ex;
-            }
-
-        }
-       
-        public int Add(Sach sach)
-        {
-
-            try
-            {
-                return sachDAO.Add(sach);
+                return new PhieuMuonDAO().getPM();
             }
             catch (SqlException ex)
             {
@@ -37,11 +21,17 @@ namespace BUS
                 throw ex;
             }
         }
-        
-        //public int themSach(Sach s)
-        //{
-        //    return new SachDAO().themSach(s);
-        //}
+        public List<Sach> getSachMuon()
+        {
+            try
+            {
+                return new PhieuMuonDAO().getSachMuon();
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
-

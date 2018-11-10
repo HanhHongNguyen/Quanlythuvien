@@ -10,7 +10,7 @@ namespace DTO
         public string MaTheLoai { get; set; }
         public string TenTheLoai { get; set; }
 
-        public TheLoai(string maTL,string tenTL)
+        public TheLoai(string maTL, string tenTL)
         {
             this.MaTheLoai = maTL;
             this.TenTheLoai = tenTL;

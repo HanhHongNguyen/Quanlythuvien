@@ -37,5 +37,17 @@ namespace BUS
                 throw ex;
             }
         }
+        public int DeleteDG(string id)
+        {
+            try
+            {
+                return new DocGiaDAO().DeleteDG(id);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

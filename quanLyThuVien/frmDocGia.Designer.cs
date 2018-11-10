@@ -43,6 +43,11 @@
             this.txtMaDG = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDocGia = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -96,6 +101,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -200,11 +206,47 @@
             // dgvDocGia
             // 
             this.dgvDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDocGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.name,
+            this.address,
+            this.phonenumber,
+            this.email});
             this.dgvDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocGia.Location = new System.Drawing.Point(0, 0);
             this.dgvDocGia.Name = "dgvDocGia";
             this.dgvDocGia.Size = new System.Drawing.Size(606, 446);
             this.dgvDocGia.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "MaDG";
+            this.id.HeaderText = "Mã ĐG";
+            this.id.Name = "id";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "TenDG";
+            this.name.HeaderText = "Tên DG";
+            this.name.Name = "name";
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "DiaChi";
+            this.address.HeaderText = "Địa chỉ";
+            this.address.Name = "address";
+            // 
+            // phonenumber
+            // 
+            this.phonenumber.DataPropertyName = "SDT";
+            this.phonenumber.HeaderText = "SDT";
+            this.phonenumber.Name = "phonenumber";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
             // 
             // frmDocGia
             // 
@@ -243,5 +285,10 @@
         private System.Windows.Forms.TextBox txtMaDG;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDocGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phonenumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
     }
 }

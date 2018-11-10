@@ -5,8 +5,6 @@ using System.Text;
 using DAO;
 using System.Data.SqlClient;
 using DTO;
-    
-
 namespace BUS
 {
     public class TheLoaiBUS
@@ -35,7 +33,19 @@ namespace BUS
 
                 throw ex;
             }
+        }
 
+        public List<TheLoai> getTL()
+        {
+            try
+            {
+                return new TheLoaiDAO().getTL();
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

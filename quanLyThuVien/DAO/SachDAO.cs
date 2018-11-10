@@ -13,7 +13,6 @@ namespace DAO
         {
             string sql = "SELECT * FROM Sach";
             string idSach, TenSach, idTacGia, idTheLoai, TinhTrang;
-
             int GiaThue, NXB;
             List<Sach> list = new List<Sach>();
             Connect();
@@ -27,7 +26,7 @@ namespace DAO
                     TenSach = dr[1].ToString();
                     idTacGia = dr[2].ToString();
                     idTheLoai = dr[3].ToString();
-                    NXB = int.Parse(dr[4].ToString());
+                    NXB = int.Parse(dr[4].ToString()); 
                     GiaThue = int.Parse(dr[5].ToString());
                     TinhTrang = dr[6].ToString();
 

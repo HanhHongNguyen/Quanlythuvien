@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using DTO;
+using BUS;
 namespace quanLyThuVien
 {
     public partial class frmMuonSach : Form
@@ -16,47 +17,15 @@ namespace quanLyThuVien
             InitializeComponent();
         }
 
-        private void combMaDG_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmMuonSach_Load(object sender, EventArgs e)
         {
-
+            List<PhieuMuon> list = new PhieuMuonBUS().getPM();
+            dgvPM.DataSource = list;
+            List<Sach> list2 = new PhieuMuonBUS().getSachMuon();
+            dgvSachChon.DataSource = list2;
         }
 
-        private void txtTimMS_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvMuonSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

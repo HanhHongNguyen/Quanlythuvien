@@ -71,5 +71,11 @@ namespace quanLyThuVien
                 this.Enabled = true;
             }
         }
+
+        private void mnuTacGia_Click(object sender, EventArgs e)
+        {
+            frmTacGia frm = new frmTacGia();
+            frm.ShowDialog();
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace DAO
         SqlConnection cn;
         public DataProvider()
         {
-            string cnStr = "Data Source=ADMIN; Initial Catalog=QuanLyThuVien; Integrated Security=True";
+            string cnStr = "Server = .\\SQLEXPRESS; Database = QuanLyThuVien ; Integrated Security = true;";
             cn = new SqlConnection(cnStr);
         }
         public void Connect()
@@ -85,8 +85,9 @@ namespace DAO
 
                 throw ex;
             }
-           
+
         }
+
         public int myExecuteNonQuery( string sql, CommandType Type, List<SqlParameter> parameters)
         {
             SqlCommand cmd = new SqlCommand(sql, cn);

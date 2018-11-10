@@ -190,7 +190,11 @@
             this.ClientSize = new System.Drawing.Size(824, 431);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmQuanLyNhanVien";
+<<<<<<< HEAD
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+=======
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+>>>>>>> phuong
             this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.frmQuanLyNhanVien_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

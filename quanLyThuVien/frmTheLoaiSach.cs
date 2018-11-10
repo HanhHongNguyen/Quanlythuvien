@@ -8,19 +8,19 @@ using System.Text;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+<<<<<<< HEAD
 using System.Data.SqlClient;
 
 
+=======
+>>>>>>> phuong
 namespace quanLyThuVien
 {
     public partial class frmTheLoaiSach : Form
     {
-        TheLoaiBUS theloaisachBUS;
-        private List<TheLoai> list;
         public frmTheLoaiSach()
         {
             InitializeComponent();
-            theloaisachBUS = new TheLoaiBUS();
         }
 
         private void frmTheLoaiSach_Load(object sender, EventArgs e)
@@ -50,6 +50,5 @@ namespace quanLyThuVien
             }
         }
 
-        
     }
 }

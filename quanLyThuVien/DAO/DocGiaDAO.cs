@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using DTO;
+using System.Data;
 namespace DAO
 {
     public class DocGiaDAO : DataProvider
@@ -64,5 +65,37 @@ namespace DAO
                 throw ex;
             }
         }
+        public int DeleteDG (string id)
+        {
+            string sql = "DELETE FROM DocGia WHERE MaDocGia = '" + id + "'";
+            List<SqlParameter> Parameters = new List<SqlParameter>();   
+            Parameters.Add(new SqlParameter("MaDocGia", id));
+            try
+            {
+                int sohang = myExcuteNonQuery(sql, CommandType.Text, Parameters);
+                return sohang;
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+        //public int UpdateDG(DocGia dg)
+        //{
+
+        //    string sql = "UPDATE Sinhvien SET MaDocGia='" + dg.MaDG + "', TenDocGia = N'" + dg.TenDG + "', DiaChi= N'" + dg.DiaChi + "', SDT= N'" + dg.SDT + "',Email= N'" + dg.Email + "' where MaDocGia = '" + dg.MaDG + "'";
+
+        //    try
+        //    {
+        //        int sohang = myExcuteNonQuery(sql, CommandType.Text, Parameters);
+        //        return sohang;
+        //    }
+        //    catch (SqlException ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //}
     }
 }

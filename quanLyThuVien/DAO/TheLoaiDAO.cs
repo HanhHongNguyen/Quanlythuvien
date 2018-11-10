@@ -16,7 +16,7 @@ namespace DAO
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@id", theLoaiSach.MaTheLoai));
             parameters.Add(new SqlParameter("@name", theLoaiSach.TenTheLoai));
-           
+
 
             try
             {
@@ -29,11 +29,11 @@ namespace DAO
             }
 
         }
-
         public List<TheLoai> getTL()
         {
             string sql = "SELECT * FROM TheLoai";
-            string maTL, tenTL;
+            string idTheLoai, tenTL;
+
             List<TheLoai> list = new List<TheLoai>();
             Connect();
             try
@@ -43,9 +43,12 @@ namespace DAO
                 {
                     maTL = dr[0].ToString();
                     tenTL = dr[1].ToString();
-                   
+
 
                     TheLoai tl = new TheLoai(maTL, tenTL);
+                    idTheLoai = dr[0].ToString();
+                    tenTL = dr[1].ToString();
+                    TheLoai tl= new TheLoai(idTheLoai, tenTL);
                     list.Add(tl);
                 }
                 dr.Close();
@@ -63,3 +66,4 @@ namespace DAO
         }
     }
 }
+
