@@ -40,6 +40,7 @@ namespace quanLyThuVien
             try
             {
                 int numerOfRows = new NhanVienBUS().Add(nhanvien);
+                dgvNV.DataSource = nhanvienBUS.getNV();
             }
             catch (SqlException ex)
             {
