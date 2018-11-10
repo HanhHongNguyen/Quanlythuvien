@@ -33,7 +33,7 @@ namespace quanLyThuVien
         {
             string maTL, tenTL;
             maTL = txtMaTL.Text;
-            tenTL = combTenTL.Text;
+            tenTL = txtTheLoai.Text;
             
 
             TheLoaiSach theLoai = new TheLoaiSach(maTL, tenTL);
@@ -41,6 +41,7 @@ namespace quanLyThuVien
             try
             {
                 int numerOfRows = new TheLoaiSachBUS().Add(theLoai);
+                dgvTL.DataSource = theloaisachBUS.getTL();
             }
             catch (SqlException ex)
             {
@@ -49,9 +50,6 @@ namespace quanLyThuVien
             }
         }
 
-        private void combTenTL_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(combTenTL.SelectedValue.ToString());
-        }
+        
     }
 }

@@ -32,11 +32,11 @@
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
-            this.combTenTL = new System.Windows.Forms.ComboBox();
             this.txtMaTL = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTL = new System.Windows.Forms.DataGridView();
+            this.txtTheLoai = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,10 +52,10 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtTheLoai);
             this.splitContainer1.Panel1.Controls.Add(this.btSua);
             this.splitContainer1.Panel1.Controls.Add(this.btXoa);
             this.splitContainer1.Panel1.Controls.Add(this.btThem);
-            this.splitContainer1.Panel1.Controls.Add(this.combTenTL);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaTL);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -98,16 +98,6 @@
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
-            // combTenTL
-            // 
-            this.combTenTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combTenTL.FormattingEnabled = true;
-            this.combTenTL.Location = new System.Drawing.Point(122, 75);
-            this.combTenTL.Name = "combTenTL";
-            this.combTenTL.Size = new System.Drawing.Size(205, 28);
-            this.combTenTL.TabIndex = 8;
-            this.combTenTL.SelectedIndexChanged += new System.EventHandler(this.combTenTL_SelectedIndexChanged);
-            // 
             // txtMaTL
             // 
             this.txtMaTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,6 +133,14 @@
             this.dgvTL.Size = new System.Drawing.Size(445, 496);
             this.dgvTL.TabIndex = 0;
             // 
+            // txtTheLoai
+            // 
+            this.txtTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTheLoai.Location = new System.Drawing.Point(122, 75);
+            this.txtTheLoai.Name = "txtTheLoai";
+            this.txtTheLoai.Size = new System.Drawing.Size(205, 26);
+            this.txtTheLoai.TabIndex = 12;
+            // 
             // frmTheLoaiSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,10 +169,10 @@
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;
-        private System.Windows.Forms.ComboBox combTenTL;
         private System.Windows.Forms.TextBox txtMaTL;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvTL;
+        private System.Windows.Forms.TextBox txtTheLoai;
     }
 }
