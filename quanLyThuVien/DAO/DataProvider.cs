@@ -91,7 +91,6 @@ namespace DAO
         {
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.CommandType = Type;
-
             if(parameters != null)
             {
                 foreach(SqlParameter parameter in parameters)

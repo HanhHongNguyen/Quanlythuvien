@@ -44,11 +44,11 @@ namespace DAO
 
         public int Add(NhanVien nhanVien)
         {
-            string sql = "INSTER INTO NhanVien VALUES( @id, @name, @phone)";
+            string sql = "INSERT INTO NhanVien VALUES (@id,@name,@phone)";
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("id", nhanVien.IDNhanVien));
-            parameters.Add(new SqlParameter("name", nhanVien.TenNV));
-            parameters.Add(new SqlParameter("phone", nhanVien.SDT));
+            parameters.Add(new SqlParameter("@id", nhanVien.IDNhanVien));
+            parameters.Add(new SqlParameter("@name", nhanVien.TenNV));
+            parameters.Add(new SqlParameter("@phone", nhanVien.SDT));
 
             try
             {

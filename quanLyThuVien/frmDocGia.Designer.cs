@@ -105,6 +105,7 @@
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtEmail
             // 

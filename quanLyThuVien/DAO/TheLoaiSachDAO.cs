@@ -12,10 +12,10 @@ namespace DAO
     {
         public int Add(TheLoaiSach theLoaiSach)
         {
-            string sql = "INSTER INTO TheLoaiSach VALUES( @maTL, @tenTL)";
+            string sql = "INSERT INTO TheLoai VALUES (@id,@name)";
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("id", theLoaiSach.MaTheLoai));
-            parameters.Add(new SqlParameter("name", theLoaiSach.TenTheLoai));
+            parameters.Add(new SqlParameter("@id", theLoaiSach.MaTheLoai));
+            parameters.Add(new SqlParameter("@name", theLoaiSach.TenTheLoai));
            
 
             try
