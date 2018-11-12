@@ -74,6 +74,9 @@ namespace quanLyThuVien
             }
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

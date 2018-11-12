@@ -49,5 +49,10 @@ namespace quanLyThuVien
             }
 
         }
+
+        private void dgvNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

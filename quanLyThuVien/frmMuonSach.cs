@@ -25,9 +25,6 @@ namespace quanLyThuVien
             dgvSachChon.DataSource = list2;
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
     }
 }

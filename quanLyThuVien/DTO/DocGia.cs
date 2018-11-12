@@ -8,7 +8,7 @@ namespace DTO
 {
     public class DocGia
     {
-            public string MaDG { get; set; }
+            public string MaDG { get ; set; }
             public string TenDG { get; set; }
             public string DiaChi { get; set; }
             public string SDT { get; set; }

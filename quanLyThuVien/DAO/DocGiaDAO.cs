@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using DTO;
-using System.Data;
 namespace DAO
 {
     public class DocGiaDAO : DataProvider
@@ -45,6 +41,7 @@ namespace DAO
             }
         }
 
+        
         public int Add (DocGia docGia)
         {
             string sql = "INSERT INTO DocGia VALUES (@id,@name,@address,@phone,@email)";

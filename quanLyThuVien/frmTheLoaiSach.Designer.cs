@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txtTheLoai = new System.Windows.Forms.TextBox();
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTL = new System.Windows.Forms.DataGridView();
-            this.txtTheLoai = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -48,6 +48,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -63,16 +64,27 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvTL);
-            this.splitContainer1.Size = new System.Drawing.Size(806, 496);
-            this.splitContainer1.SplitterDistance = 357;
+            this.splitContainer1.Size = new System.Drawing.Size(1075, 610);
+            this.splitContainer1.SplitterDistance = 476;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // txtTheLoai
+            // 
+            this.txtTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTheLoai.Location = new System.Drawing.Point(163, 92);
+            this.txtTheLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTheLoai.Name = "txtTheLoai";
+            this.txtTheLoai.Size = new System.Drawing.Size(272, 26);
+            this.txtTheLoai.TabIndex = 12;
             // 
             // btSua
             // 
             this.btSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSua.Location = new System.Drawing.Point(239, 171);
+            this.btSua.Location = new System.Drawing.Point(319, 210);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(98, 51);
+            this.btSua.Size = new System.Drawing.Size(117, 63);
             this.btSua.TabIndex = 9;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
@@ -80,9 +92,10 @@
             // btXoa
             // 
             this.btXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXoa.Location = new System.Drawing.Point(122, 171);
+            this.btXoa.Location = new System.Drawing.Point(172, 210);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(101, 51);
+            this.btXoa.Size = new System.Drawing.Size(119, 63);
             this.btXoa.TabIndex = 10;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
@@ -90,9 +103,10 @@
             // btThem
             // 
             this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.Location = new System.Drawing.Point(12, 171);
+            this.btThem.Location = new System.Drawing.Point(16, 210);
+            this.btThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(93, 51);
+            this.btThem.Size = new System.Drawing.Size(124, 63);
             this.btThem.TabIndex = 11;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
@@ -101,26 +115,29 @@
             // txtMaTL
             // 
             this.txtMaTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTL.Location = new System.Drawing.Point(122, 25);
+            this.txtMaTL.Location = new System.Drawing.Point(163, 31);
+            this.txtMaTL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaTL.Name = "txtMaTL";
-            this.txtMaTL.Size = new System.Drawing.Size(206, 26);
+            this.txtMaTL.Size = new System.Drawing.Size(273, 26);
             this.txtMaTL.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 78);
+            this.label2.Location = new System.Drawing.Point(17, 96);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 24);
+            this.label2.Size = new System.Drawing.Size(109, 30);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tên thể loại:";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Location = new System.Drawing.Point(17, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 24);
+            this.label1.Size = new System.Drawing.Size(109, 30);
             this.label1.TabIndex = 6;
             this.label1.Text = "Mã thể loại:";
             // 
@@ -129,26 +146,21 @@
             this.dgvTL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTL.Location = new System.Drawing.Point(0, 0);
+            this.dgvTL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvTL.Name = "dgvTL";
-            this.dgvTL.Size = new System.Drawing.Size(445, 496);
+            this.dgvTL.Size = new System.Drawing.Size(594, 610);
             this.dgvTL.TabIndex = 0;
-            // 
-            // txtTheLoai
-            // 
-            this.txtTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTheLoai.Location = new System.Drawing.Point(122, 75);
-            this.txtTheLoai.Name = "txtTheLoai";
-            this.txtTheLoai.Size = new System.Drawing.Size(205, 26);
-            this.txtTheLoai.TabIndex = 12;
             // 
             // frmTheLoaiSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(806, 496);
+            this.ClientSize = new System.Drawing.Size(1075, 610);
             this.Controls.Add(this.splitContainer1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTheLoaiSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thể loại sách";

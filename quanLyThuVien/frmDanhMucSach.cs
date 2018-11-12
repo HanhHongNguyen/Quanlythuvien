@@ -14,7 +14,7 @@ namespace quanLyThuVien
     public partial class frmDanhMucSach : Form
     {
         SachBUS sachBUS = new SachBUS();
-        List<Sach> list;
+        private List<Sach> list;
         public frmDanhMucSach()
         {
             sachBUS = new SachBUS();
@@ -70,5 +70,19 @@ namespace quanLyThuVien
             //int index= Convert.ToInt32(cb.SelectedValue);
         }
 
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenSach_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

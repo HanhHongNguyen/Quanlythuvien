@@ -22,5 +22,15 @@ namespace quanLyThuVien
             List<TacGia> list = new TacGiaBUS().getTacGia();
             dgvTacGia.DataSource = list;
         }
+
+        private void txtTenTG_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGhiChu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

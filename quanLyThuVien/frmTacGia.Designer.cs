@@ -47,6 +47,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -61,55 +62,70 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvTacGia);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 266;
+            this.splitContainer1.Size = new System.Drawing.Size(1066, 487);
+            this.splitContainer1.SplitterDistance = 354;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(111, 119);
+            this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGhiChu.Location = new System.Drawing.Point(128, 143);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(100, 20);
+            this.txtGhiChu.Size = new System.Drawing.Size(193, 26);
             this.txtGhiChu.TabIndex = 5;
+            this.txtGhiChu.TextChanged += new System.EventHandler(this.txtGhiChu_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 126);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 149);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ghi chú :";
             // 
             // txtTenTG
             // 
-            this.txtTenTG.Location = new System.Drawing.Point(111, 68);
+            this.txtTenTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTG.Location = new System.Drawing.Point(128, 84);
+            this.txtTenTG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenTG.Name = "txtTenTG";
-            this.txtTenTG.Size = new System.Drawing.Size(100, 20);
+            this.txtTenTG.Size = new System.Drawing.Size(193, 26);
             this.txtTenTG.TabIndex = 6;
+            this.txtTenTG.TextChanged += new System.EventHandler(this.txtTenTG_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 75);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 90);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(95, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên tác giả :";
             // 
             // txtIDTacGia
             // 
-            this.txtIDTacGia.Location = new System.Drawing.Point(111, 22);
+            this.txtIDTacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDTacGia.Location = new System.Drawing.Point(128, 27);
+            this.txtIDTacGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIDTacGia.Name = "txtIDTacGia";
-            this.txtIDTacGia.Size = new System.Drawing.Size(100, 20);
+            this.txtIDTacGia.Size = new System.Drawing.Size(193, 26);
             this.txtIDTacGia.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 29);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Mã tác giả :";
             // 
@@ -118,18 +134,21 @@
             this.dgvTacGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTacGia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTacGia.Location = new System.Drawing.Point(0, 0);
+            this.dgvTacGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvTacGia.Name = "dgvTacGia";
-            this.dgvTacGia.Size = new System.Drawing.Size(530, 450);
+            this.dgvTacGia.Size = new System.Drawing.Size(707, 487);
             this.dgvTacGia.TabIndex = 0;
             // 
             // frmTacGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1066, 487);
             this.Controls.Add(this.splitContainer1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTacGia";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TacGia";
             this.Load += new System.EventHandler(this.frmTacGia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

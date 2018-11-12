@@ -30,13 +30,11 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lbTienThue = new System.Windows.Forms.Label();
             this.lbMaDocGia = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnTimPM = new System.Windows.Forms.Button();
             this.txtMaPM = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaPT = new System.Windows.Forms.TextBox();
@@ -67,18 +65,17 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.btnSave);
-            this.splitContainer1.Panel1.Controls.Add(this.lbTienThue);
             this.splitContainer1.Panel1.Controls.Add(this.lbMaDocGia);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.btnTimPM);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaPM);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaNV);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaPT);
@@ -87,107 +84,109 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(841, 467);
-            this.splitContainer1.SplitterDistance = 342;
+            this.splitContainer1.Size = new System.Drawing.Size(1121, 575);
+            this.splitContainer1.SplitterDistance = 455;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(103, 282);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(121, 238);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(107, 53);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "LƯU";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // lbTienThue
-            // 
-            this.lbTienThue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbTienThue.Location = new System.Drawing.Point(103, 161);
-            this.lbTienThue.Name = "lbTienThue";
-            this.lbTienThue.Size = new System.Drawing.Size(126, 23);
-            this.lbTienThue.TabIndex = 4;
-            // 
             // lbMaDocGia
             // 
             this.lbMaDocGia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbMaDocGia.Location = new System.Drawing.Point(103, 192);
+            this.lbMaDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaDocGia.Location = new System.Drawing.Point(121, 166);
+            this.lbMaDocGia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMaDocGia.Name = "lbMaDocGia";
-            this.lbMaDocGia.Size = new System.Drawing.Size(126, 27);
+            this.lbMaDocGia.Size = new System.Drawing.Size(204, 33);
             this.lbMaDocGia.TabIndex = 3;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 206);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(13, 166);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.Size = new System.Drawing.Size(89, 33);
             this.label5.TabIndex = 3;
             this.label5.Text = "Mã độc giả :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnTimPM
             // 
-            this.btnTimPM.Location = new System.Drawing.Point(250, 12);
+            this.btnTimPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimPM.Location = new System.Drawing.Point(362, 15);
+            this.btnTimPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTimPM.Name = "btnTimPM";
-            this.btnTimPM.Size = new System.Drawing.Size(75, 23);
+            this.btnTimPM.Size = new System.Drawing.Size(71, 28);
             this.btnTimPM.TabIndex = 2;
             this.btnTimPM.Text = "TÌM";
             this.btnTimPM.UseVisualStyleBackColor = true;
+            this.btnTimPM.Click += new System.EventHandler(this.btnTimPM_Click);
             // 
             // txtMaPM
             // 
-            this.txtMaPM.Location = new System.Drawing.Point(91, 14);
+            this.txtMaPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaPM.Location = new System.Drawing.Point(121, 17);
+            this.txtMaPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaPM.Name = "txtMaPM";
-            this.txtMaPM.Size = new System.Drawing.Size(126, 20);
+            this.txtMaPM.Size = new System.Drawing.Size(204, 26);
             this.txtMaPM.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 21);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(63, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã PM :";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tiền thuê :";
-            // 
             // txtMaNV
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(103, 132);
+            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNV.Location = new System.Drawing.Point(121, 113);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(126, 20);
+            this.txtMaNV.Size = new System.Drawing.Size(204, 26);
             this.txtMaNV.TabIndex = 1;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 135);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 113);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(61, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã NV :";
             // 
             // txtMaPT
             // 
-            this.txtMaPT.Location = new System.Drawing.Point(103, 106);
+            this.txtMaPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaPT.Location = new System.Drawing.Point(121, 64);
+            this.txtMaPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaPT.Name = "txtMaPT";
-            this.txtMaPT.Size = new System.Drawing.Size(126, 20);
+            this.txtMaPT.Size = new System.Drawing.Size(204, 26);
             this.txtMaPT.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 109);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 64);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(60, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã PT :";
             // 
@@ -195,6 +194,7 @@
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -205,14 +205,16 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgvPT);
-            this.splitContainer2.Size = new System.Drawing.Size(495, 467);
-            this.splitContainer2.SplitterDistance = 229;
+            this.splitContainer2.Size = new System.Drawing.Size(661, 575);
+            this.splitContainer2.SplitterDistance = 281;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -222,8 +224,9 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dgvSachMuon);
-            this.splitContainer3.Size = new System.Drawing.Size(495, 229);
-            this.splitContainer3.SplitterDistance = 302;
+            this.splitContainer3.Size = new System.Drawing.Size(661, 281);
+            this.splitContainer3.SplitterDistance = 403;
+            this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
             // 
             // dgvPM
@@ -231,8 +234,9 @@
             this.dgvPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPM.Location = new System.Drawing.Point(0, 0);
+            this.dgvPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPM.Name = "dgvPM";
-            this.dgvPM.Size = new System.Drawing.Size(302, 229);
+            this.dgvPM.Size = new System.Drawing.Size(403, 281);
             this.dgvPM.TabIndex = 0;
             // 
             // dgvSachMuon
@@ -240,8 +244,9 @@
             this.dgvSachMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSachMuon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSachMuon.Location = new System.Drawing.Point(0, 0);
+            this.dgvSachMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvSachMuon.Name = "dgvSachMuon";
-            this.dgvSachMuon.Size = new System.Drawing.Size(189, 229);
+            this.dgvSachMuon.Size = new System.Drawing.Size(253, 281);
             this.dgvSachMuon.TabIndex = 0;
             // 
             // dgvPT
@@ -249,16 +254,19 @@
             this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPT.Location = new System.Drawing.Point(0, 0);
+            this.dgvPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPT.Name = "dgvPT";
-            this.dgvPT.Size = new System.Drawing.Size(495, 234);
+            this.dgvPT.Size = new System.Drawing.Size(661, 289);
             this.dgvPT.TabIndex = 0;
             // 
             // lbMaDG
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 467);
+            this.ClientSize = new System.Drawing.Size(1121, 575);
             this.Controls.Add(this.splitContainer1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "lbMaDG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Trả sách";
@@ -293,11 +301,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbMaDocGia;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.Label lbTienThue;
         private System.Windows.Forms.DataGridView dgvPM;
         private System.Windows.Forms.DataGridView dgvSachMuon;
         private System.Windows.Forms.DataGridView dgvPT;
