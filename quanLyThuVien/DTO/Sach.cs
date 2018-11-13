@@ -18,23 +18,21 @@ namespace DTO
         public int GiaThue { get; set; }
         public string TinhTrang { get; set; }
         
-        public Sach (string idsach, string tensach, string idtacgia, string idtheloai, int nxb, int giathue, string tinhtrang)
+        public Sach (string idsach, string tensach, string idtacgia, string idtheloai, int nxb, string tinhtrang)
         {
             IDSach = idsach;
             TenSach = tensach;
             IDTacGia = idtacgia;
             IDTheLoai = idtheloai;
             NXB = nxb;
-            GiaThue = giathue;
             TinhTrang = tinhtrang;
             
         }
-        public Sach (string idsach, string tensach, int nxb, int giathue, string tacgia, string theloai)
+        public Sach (string idsach, string tensach, int nxb, string tacgia, string theloai)
         {
             this.IDSach = idsach;
             this.TenSach = tensach;
             this.NXB = nxb;
-            this.GiaThue = giathue;
             this.TacGia = tacgia;
             this.TheLoai = theloai;
             

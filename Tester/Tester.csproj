@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A02C077D-0F8B-4A93-AEF0-E4238C632958}</ProjectGuid>
+    <ProjectGuid>{61A73F73-6DF2-4DC7-A67C-6AB5DB130067}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tester</RootNamespace>
@@ -56,9 +56,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\quanLyThuVien\quanLyThuVien.csproj">
-      <Project>{cef0d9fc-51d1-4089-b898-b64dce9edfdb}</Project>
-      <Name>quanLyThuVien</Name>
+    <ProjectReference Include="..\quanLyThuVien\DAO\DAO.csproj">
+      <Project>{1292a928-a48b-4264-8b11-19b12839267a}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\quanLyThuVien\DTO\DTO.csproj">
+      <Project>{82a250b0-b7e8-4c89-b8cc-10ec3e1cdb99}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

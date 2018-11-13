@@ -15,6 +15,7 @@ namespace DAO
             string sql = "SELECT * FROM DocGia";
             string id, name, address, sdt, email;
             List<DocGia> list = new List<DocGia>();
+           
             Connect();
 
             try
@@ -43,6 +44,7 @@ namespace DAO
             {
                 Disconnect();
             }
+            
         }
 
         public int Add (DocGia docGia)
@@ -65,15 +67,15 @@ namespace DAO
                 throw ex;
             }
         }
-        public int DeleteDG (string id)
+        public bool DeleteDG(DocGia dg)
         {
-            string sql = "DELETE FROM DocGia WHERE MaDocGia = '" + id + "'";
-            List<SqlParameter> Parameters = new List<SqlParameter>();   
-            Parameters.Add(new SqlParameter("MaDocGia", id));
+            string sql = "DELETE FROM DocGia WHERE MaDocGia = @id";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@id", dg.MaDG));
             try
             {
-                int sohang = myExecuteNonQuery(sql, CommandType.Text, Parameters);
-                return sohang;
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
             }
             catch (SqlException ex)
             {

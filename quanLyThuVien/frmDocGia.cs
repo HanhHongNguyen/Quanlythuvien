@@ -14,7 +14,6 @@ namespace quanLyThuVien
     public partial class frmDocGia : Form
     {
         DocGiaBUS docGiaBUS = new DocGiaBUS();
-        List<DocGia> list;
         public frmDocGia()
         {
             InitializeComponent();
@@ -22,15 +21,27 @@ namespace quanLyThuVien
         }
         private void frmDocGia_Load(object sender, EventArgs e)
         {
+            Init();
             List<DocGia> list = new DocGiaBUS().getDocGia();
-            dgvDocGia.DataSource = list;
-            txtMaDG.DataBindings.Add("Text", list, "MaDG");
-            txtTenDG.DataBindings.Add("Text", list, "TenDG");
-            txtDiaChiDG.DataBindings.Add("Text", list, "DiaChi");
-            txtSDT.DataBindings.Add("Text", list, "SDT");
-            txtEmail.DataBindings.Add("Text", list, "Email");
+            
         }
 
+        public void Init()
+        {
+            List<DocGia> list = new DocGiaBUS().getDocGia();
+            dgvDocGia.DataSource = list;
+            txtMaDG.DataBindings.Clear();
+            txtMaDG.DataBindings.Add("Text", list, "MaDG");
+            txtTenDG.DataBindings.Clear();
+            txtTenDG.DataBindings.Add("Text", list, "TenDG");
+            txtDiaChiDG.DataBindings.Clear();
+            txtDiaChiDG.DataBindings.Add("Text", list, "DiaChi");
+            txtSDT.DataBindings.Clear();
+            txtSDT.DataBindings.Add("Text", list, "SDT");
+            txtEmail.DataBindings.Clear();
+            txtEmail.DataBindings.Add("Text", list, "Email");
+
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -60,12 +71,26 @@ namespace quanLyThuVien
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string MaDG = txtMaDG.Text;
+            
+        }
+
+        private void dgvDocGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             try
             {
-                int sohang = new DocGiaBUS().DeleteDG(MaDG);
-                if (sohang > 0)
-                    dgvDocGia.DataSource = new DocGiaBUS().getDocGia();
+                string id = txtMaDG.Text;
+                string name = txtTenDG.Text;
+                string address = txtDiaChiDG.Text;
+                string phone = txtSDT.Text;
+                string email = txtEmail.Text;
+                DocGia dg = new DocGia(id, name, address, phone, email);
+                bool b = new DocGiaBUS().DeleteDG(dg);
+                if (b)
+                {
+                    MessageBox.Show("Xoa Thành Công");
+                }
+                Init();
+
             }
             catch (SqlException ex)
             {
@@ -73,7 +98,5 @@ namespace quanLyThuVien
                 MessageBox.Show("Xoa that bai", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }

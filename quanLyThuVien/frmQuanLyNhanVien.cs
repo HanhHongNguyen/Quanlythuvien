@@ -15,7 +15,6 @@ namespace quanLyThuVien
     public partial class frmQuanLyNhanVien : Form
     {
         NhanVienBUS nhanvienBUS;
-        List<NhanVien> list;
         public frmQuanLyNhanVien()
         {
             InitializeComponent();

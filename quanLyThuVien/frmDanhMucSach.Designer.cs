@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.comboTheLoai = new System.Windows.Forms.ComboBox();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -38,8 +39,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtTinhTrang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtGiaThue = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaTG = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,11 +52,10 @@
             this.idTacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nxb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giathue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tinhtrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.theloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboTheLoai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -83,8 +81,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.txtTinhTrang);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
-            this.splitContainer1.Panel1.Controls.Add(this.txtGiaThue);
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaTG);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
@@ -99,6 +95,14 @@
             this.splitContainer1.Size = new System.Drawing.Size(935, 478);
             this.splitContainer1.SplitterDistance = 440;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // comboTheLoai
+            // 
+            this.comboTheLoai.FormattingEnabled = true;
+            this.comboTheLoai.Location = new System.Drawing.Point(148, 147);
+            this.comboTheLoai.Name = "comboTheLoai";
+            this.comboTheLoai.Size = new System.Drawing.Size(202, 28);
+            this.comboTheLoai.TabIndex = 3;
             // 
             // btnSua
             // 
@@ -161,7 +165,7 @@
             // 
             // txtTinhTrang
             // 
-            this.txtTinhTrang.Location = new System.Drawing.Point(148, 281);
+            this.txtTinhTrang.Location = new System.Drawing.Point(148, 239);
             this.txtTinhTrang.Name = "txtTinhTrang";
             this.txtTinhTrang.Size = new System.Drawing.Size(202, 26);
             this.txtTinhTrang.TabIndex = 1;
@@ -169,27 +173,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 281);
+            this.label7.Location = new System.Drawing.Point(13, 239);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Tình trạng :";
-            // 
-            // txtGiaThue
-            // 
-            this.txtGiaThue.Location = new System.Drawing.Point(148, 238);
-            this.txtGiaThue.Name = "txtGiaThue";
-            this.txtGiaThue.Size = new System.Drawing.Size(202, 26);
-            this.txtGiaThue.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 238);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Giá thuê :";
             // 
             // label4
             // 
@@ -257,8 +245,8 @@
             this.idTacgia,
             this.idTL,
             this.nxb,
-            this.giathue,
             this.tinhtrang,
+            this.delete,
             this.theloai,
             this.tacgia});
             this.dgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -266,6 +254,7 @@
             this.dgvSach.Name = "dgvSach";
             this.dgvSach.Size = new System.Drawing.Size(491, 478);
             this.dgvSach.TabIndex = 0;
+            this.dgvSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSach_CellContentClick);
             // 
             // idSach
             // 
@@ -297,17 +286,16 @@
             this.nxb.HeaderText = "NXB";
             this.nxb.Name = "nxb";
             // 
-            // giathue
-            // 
-            this.giathue.DataPropertyName = "GiaThue";
-            this.giathue.HeaderText = "Giá thuê";
-            this.giathue.Name = "giathue";
-            // 
             // tinhtrang
             // 
             this.tinhtrang.DataPropertyName = "tinhtrang";
             this.tinhtrang.HeaderText = "Tình trạng";
             this.tinhtrang.Name = "tinhtrang";
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "Xóa";
+            this.delete.Name = "delete";
             // 
             // theloai
             // 
@@ -322,14 +310,6 @@
             this.tacgia.HeaderText = "Column1";
             this.tacgia.Name = "tacgia";
             this.tacgia.Visible = false;
-            // 
-            // comboTheLoai
-            // 
-            this.comboTheLoai.FormattingEnabled = true;
-            this.comboTheLoai.Location = new System.Drawing.Point(148, 147);
-            this.comboTheLoai.Name = "comboTheLoai";
-            this.comboTheLoai.Size = new System.Drawing.Size(202, 28);
-            this.comboTheLoai.TabIndex = 3;
             // 
             // frmDanhMucSach
             // 
@@ -365,8 +345,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTinhTrang;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtGiaThue;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaTG;
         private System.Windows.Forms.Label label3;
@@ -375,15 +353,15 @@
         private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvSach;
+        private System.Windows.Forms.ComboBox comboTheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTacgia;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTL;
         private System.Windows.Forms.DataGridViewTextBoxColumn nxb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giathue;
         private System.Windows.Forms.DataGridViewTextBoxColumn tinhtrang;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn theloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn tacgia;
-        private System.Windows.Forms.ComboBox comboTheLoai;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -26,9 +27,43 @@ namespace DAO
                     date = Convert.ToDateTime(dr[1].ToString()).ToShortDateString();
                     idDG = dr[2].ToString();
                     idNV = dr[3].ToString();
-                    tienCoc = int.Parse(dr[4].ToString());
-                    PhieuMuon pm = new PhieuMuon(idPM, date, idDG, idNV, tienCoc);
+                    PhieuMuon pm = new PhieuMuon(idPM, date, idDG, idNV);
                     list.Add(pm);
+                }
+                dr.Close();
+                return list;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public List<Sach> getSachMuon()
+        {
+            string sql = "SELECT MaSach, TenSach,  NamXB, TenTacGia, TenTheLoai FROM Sach, TacGia, TheLoai WHERE Sach.MaTacGia = TacGia.MaTacGia AND Sach.MaTheLoai = TheLoai.MaTheLoai";
+            string idSach, nameSach, theloai, tacgia;
+            int nxb;
+
+            List<Sach> list = new List<Sach>();
+            Connect();
+
+            try
+            {
+                SqlDataReader dr = myExecuteReader(sql);
+                while (dr.Read())
+                {
+                    idSach = dr[0].ToString();
+                    nameSach = dr[1].ToString();
+                    nxb = int.Parse(dr[2].ToString());
+                    tacgia = dr[3].ToString();
+                    theloai = dr[4].ToString();
+                   
+                    Sach sachmuon = new Sach(idSach, nameSach, nxb,tacgia, theloai );
+                    list.Add(sachmuon);
                 }
                 dr.Close();
                 return list;
@@ -43,41 +78,39 @@ namespace DAO
                 Disconnect();
             }
         }
-        public List<Sach> getSachMuon()
+        public int Add(PhieuMuon pm)
         {
-            string sql = "SELECT MaSach, TenSach,  NamXB, GiaThue, TenTacGia, TenTheLoai FROM Sach, TacGia, TheLoai WHERE Sach.MaTacGia = TacGia.MaTacGia AND Sach.MaTheLoai = TheLoai.MaTheLoai";
-            string idSach, nameSach, theloai, tacgia;
-            int nxb, giathue;
-
-            List<Sach> list = new List<Sach>();
-            Connect();
+            string sql = "INSERT INTO PhieuMuon VALUES (@idPM,@date,@idDG,@idNV)";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@idPM", pm.MaPM));
+            parameters.Add(new SqlParameter("@date", pm.NgayMuon));
+            parameters.Add(new SqlParameter("@idDG", pm.MaDG));
+            parameters.Add(new SqlParameter("@idNV", pm.MaNV));
 
             try
             {
-                SqlDataReader dr = myExecuteReader(sql);
-                while (dr.Read())
-                {
-                    idSach = dr[0].ToString();
-                    nameSach = dr[1].ToString();
-                    nxb = int.Parse(dr[2].ToString());
-                    giathue = int.Parse(dr[3].ToString());
-                    tacgia = dr[4].ToString();
-                    theloai = dr[5].ToString();
-                   
-                    Sach sachmuon = new Sach(idSach, nameSach, nxb, giathue,tacgia, theloai );
-                    list.Add(sachmuon);
-                }
-                dr.Close();
-                return list;
+                return (myExecuteNonQuery(sql, CommandType.Text, parameters));
             }
             catch (SqlException ex)
             {
 
                 throw ex;
             }
-            finally
+        }
+        public bool DeletePM(PhieuMuon pm)
+        {
+            string sql = "DELETE FROM PhieuMuon WHERE MaPM = @id";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@id", pm.MaPM));
+            try
             {
-                Disconnect();
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
             }
         }
     }

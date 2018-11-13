@@ -37,11 +37,19 @@ namespace BUS
                 throw ex;
             }
         }
-        
-        //public int themSach(Sach s)
-        //{
-        //    return new SachDAO().themSach(s);
-        //}
+
+        public bool DeleteSach(Sach s)
+        {
+            try
+            {
+                return new SachDAO().DeleteSach(s);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
 

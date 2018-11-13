@@ -48,6 +48,7 @@
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -211,12 +212,14 @@
             this.name,
             this.address,
             this.phonenumber,
-            this.email});
+            this.email,
+            this.delete});
             this.dgvDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocGia.Location = new System.Drawing.Point(0, 0);
             this.dgvDocGia.Name = "dgvDocGia";
             this.dgvDocGia.Size = new System.Drawing.Size(606, 446);
             this.dgvDocGia.TabIndex = 0;
+            this.dgvDocGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocGia_CellContentClick);
             // 
             // id
             // 
@@ -247,6 +250,11 @@
             this.email.DataPropertyName = "Email";
             this.email.HeaderText = "Email";
             this.email.Name = "email";
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "Xóa";
+            this.delete.Name = "delete";
             // 
             // frmDocGia
             // 
@@ -290,5 +298,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn phonenumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
     }
 }
