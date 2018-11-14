@@ -41,6 +41,10 @@ namespace quanLyThuVien
             txtMaSach.DataBindings.Add("Text", list, "IDSach");
             txtTenSach.DataBindings.Clear();
             txtTenSach.DataBindings.Add("Text", list, "TenSach");
+            comboTG.DataBindings.Clear();
+            comboTG.DataBindings.Add("SelectedValue", list, "IDTacGia");
+            comboTheLoai.DataBindings.Clear();
+            comboTheLoai.DataBindings.Add("SelectedValue", list, "IDTheLoai");
             txtNXB.DataBindings.Clear();
             txtNXB.DataBindings.Add("Text", list, "NXB");
             txtTinhTrang.DataBindings.Clear();

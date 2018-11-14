@@ -45,6 +45,18 @@ namespace BUS
                 throw ex;
             }
         }
+        public int AddSM(SachMuon sm)
+        {
+            try
+            {
+                return new PhieuMuonDAO().AddSM(sm);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
         public bool DeletePM(PhieuMuon pm)
         {
             try

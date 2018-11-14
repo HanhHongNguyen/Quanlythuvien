@@ -36,7 +36,7 @@ namespace quanLyThuVien
 
         private void ToolsmiTraSach_Click(object sender, EventArgs e)
         {
-            lbMaDG ts = new lbMaDG();
+            frmTraSach ts = new frmTraSach();
             ts.ShowDialog();
         }
 
