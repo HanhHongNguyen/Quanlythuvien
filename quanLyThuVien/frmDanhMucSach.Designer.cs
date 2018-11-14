@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btTimSach = new System.Windows.Forms.Button();
             this.comboTheLoai = new System.Windows.Forms.ComboBox();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtNXB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTimSach = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtTinhTrang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,14 +70,13 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btTimSach);
             this.splitContainer1.Panel1.Controls.Add(this.comboTheLoai);
             this.splitContainer1.Panel1.Controls.Add(this.btnSua);
-            this.splitContainer1.Panel1.Controls.Add(this.btnXoa);
             this.splitContainer1.Panel1.Controls.Add(this.btnThem);
             this.splitContainer1.Panel1.Controls.Add(this.txtNXB);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.txtTimSach);
-            this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.txtTinhTrang);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
@@ -96,6 +94,16 @@
             this.splitContainer1.SplitterDistance = 440;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btTimSach
+            // 
+            this.btTimSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTimSach.Location = new System.Drawing.Point(16, 290);
+            this.btTimSach.Name = "btTimSach";
+            this.btTimSach.Size = new System.Drawing.Size(83, 27);
+            this.btTimSach.TabIndex = 18;
+            this.btTimSach.Text = "Tìm";
+            this.btTimSach.UseVisualStyleBackColor = true;
+            // 
             // comboTheLoai
             // 
             this.comboTheLoai.FormattingEnabled = true;
@@ -106,27 +114,19 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(259, 402);
+            this.btnSua.Location = new System.Drawing.Point(318, 385);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 36);
+            this.btnSua.Size = new System.Drawing.Size(91, 53);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "SỬA";
             this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(139, 402);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 36);
-            this.btnXoa.TabIndex = 2;
-            this.btnXoa.Text = "XÓA";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(40, 402);
+            this.btnThem.Location = new System.Drawing.Point(148, 385);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 36);
+            this.btnThem.Size = new System.Drawing.Size(95, 53);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -149,19 +149,10 @@
             // 
             // txtTimSach
             // 
-            this.txtTimSach.Location = new System.Drawing.Point(148, 345);
+            this.txtTimSach.Location = new System.Drawing.Point(148, 290);
             this.txtTimSach.Name = "txtTimSach";
             this.txtTimSach.Size = new System.Drawing.Size(202, 26);
             this.txtTimSach.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 345);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tìm";
             // 
             // txtTinhTrang
             // 
@@ -337,12 +328,10 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TextBox txtNXB;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTimSach;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTinhTrang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
@@ -363,5 +352,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn theloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn tacgia;
+        private System.Windows.Forms.Button btTimSach;
     }
 }

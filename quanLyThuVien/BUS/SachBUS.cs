@@ -50,6 +50,19 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public bool UpdateSa(Sach sach)
+        {
+            try
+            {
+                return new SachDAO().UpdateSa(sach);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
 

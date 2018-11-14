@@ -13,7 +13,7 @@ namespace DAO
         SqlConnection cn;
         public DataProvider()
         {
-            string cnStr = "Server = .\\SQLEXPRESS; Database = QuanLyThuVien ; Integrated Security = true;";
+            string cnStr = "Server = ADMIN; Database = QuanLyThuVien ; Integrated Security = true;";
             cn = new SqlConnection(cnStr);
         }
         public void Connect()

@@ -47,6 +47,11 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dgvPM = new System.Windows.Forms.DataGridView();
+            this.MaPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgvSachChon = new System.Windows.Forms.DataGridView();
             this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,11 +63,6 @@
             this.idtheloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idtacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tinhtrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -122,12 +122,13 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(110, 158);
+            this.btnUpdate.Location = new System.Drawing.Point(218, 158);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "SỬA";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnTim
             // 
@@ -227,7 +228,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(5, 158);
+            this.btnAdd.Location = new System.Drawing.Point(110, 158);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 10;
@@ -288,6 +289,37 @@
             this.dgvPM.Size = new System.Drawing.Size(566, 249);
             this.dgvPM.TabIndex = 0;
             this.dgvPM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPM_CellContentClick);
+            // 
+            // MaPM
+            // 
+            this.MaPM.DataPropertyName = "MaPM";
+            this.MaPM.HeaderText = "Mã PM";
+            this.MaPM.Name = "MaPM";
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "NgayMuon";
+            this.Date.HeaderText = "Ngày mượn";
+            this.Date.Name = "Date";
+            // 
+            // MaDG
+            // 
+            this.MaDG.DataPropertyName = "MaDG";
+            this.MaDG.HeaderText = "Mã độc giả";
+            this.MaDG.Name = "MaDG";
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã nhân viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Xóa";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // dgvSachChon
             // 
@@ -383,37 +415,6 @@
             this.tinhtrang.Name = "tinhtrang";
             this.tinhtrang.ReadOnly = true;
             this.tinhtrang.Visible = false;
-            // 
-            // MaPM
-            // 
-            this.MaPM.DataPropertyName = "MaPM";
-            this.MaPM.HeaderText = "Mã PM";
-            this.MaPM.Name = "MaPM";
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "NgayMuon";
-            this.Date.HeaderText = "Ngày mượn";
-            this.Date.Name = "Date";
-            // 
-            // MaDG
-            // 
-            this.MaDG.DataPropertyName = "MaDG";
-            this.MaDG.HeaderText = "Mã độc giả";
-            this.MaDG.Name = "MaDG";
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã nhân viên";
-            this.MaNV.Name = "MaNV";
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Xóa";
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmMuonSach
             // 

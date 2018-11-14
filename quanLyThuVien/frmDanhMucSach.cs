@@ -97,5 +97,32 @@ namespace quanLyThuVien
                 MessageBox.Show("Xoa that bai", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string idsach, tensach, idtacgia, idtheloai, tinhtrang;
+            int nxb;
+            idsach = txtMaSach.Text;
+            tensach = txtTenSach.Text;
+            idtacgia = txtMaTG.Text;
+            idtheloai = comboTheLoai.SelectedIndex.ToString();
+            nxb = int.Parse(txtNXB.Text);
+            tinhtrang = txtTinhTrang.Text;
+
+
+            Sach sach = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, tinhtrang);
+
+            try
+            {
+                bool b = new SachBUS().UpdateSa(sach);
+                Init();
+                dgvSach.DataSource = new SachBUS().getSach();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi sửa tác giả\n" + ex.Message);
+
+            }
+        }
     }
 }

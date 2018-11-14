@@ -69,10 +69,6 @@ namespace quanLyThuVien
             }
 
         }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void dgvDocGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -87,7 +83,7 @@ namespace quanLyThuVien
                 bool b = new DocGiaBUS().DeleteDG(dg);
                 if (b)
                 {
-                    MessageBox.Show("Xoa Thành Công");
+                    MessageBox.Show("Xóa Thành Công");
                 }
                 Init();
 
@@ -95,7 +91,31 @@ namespace quanLyThuVien
             catch (SqlException ex)
             {
 
-                MessageBox.Show("Xoa that bai", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Xóa thất bại", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            String id, name, address, phone, email;
+            id = txtMaDG.Text;
+            name = txtTenDG.Text;
+            address = txtDiaChiDG.Text;
+            phone = txtSDT.Text;
+            email = txtEmail.Text;
+
+            DocGia docGia = new DocGia(id, name, address, phone, email);
+
+            try
+            {
+                bool b = new DocGiaBUS().UpdateDG(docGia);
+                Init();
+                dgvDocGia.DataSource = new DocGiaBUS().getDocGia();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi sửa tác giả\n" + ex.Message);
+
             }
         }
     }

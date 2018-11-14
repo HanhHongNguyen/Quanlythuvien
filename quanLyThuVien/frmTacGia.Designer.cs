@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btSuaTG = new System.Windows.Forms.Button();
+            this.btThemTG = new System.Windows.Forms.Button();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenTG = new System.Windows.Forms.TextBox();
@@ -36,6 +38,10 @@
             this.txtIDTacGia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTacGia = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btXoaTG = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,6 +57,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btSuaTG);
+            this.splitContainer1.Panel1.Controls.Add(this.btThemTG);
             this.splitContainer1.Panel1.Controls.Add(this.txtGhiChu);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.txtTenTG);
@@ -64,6 +72,28 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btSuaTG
+            // 
+            this.btSuaTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSuaTG.Location = new System.Drawing.Point(166, 199);
+            this.btSuaTG.Name = "btSuaTG";
+            this.btSuaTG.Size = new System.Drawing.Size(76, 37);
+            this.btSuaTG.TabIndex = 20;
+            this.btSuaTG.Text = "Sửa";
+            this.btSuaTG.UseVisualStyleBackColor = true;
+            this.btSuaTG.Click += new System.EventHandler(this.btSuaTG_Click);
+            // 
+            // btThemTG
+            // 
+            this.btThemTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThemTG.Location = new System.Drawing.Point(42, 199);
+            this.btThemTG.Name = "btThemTG";
+            this.btThemTG.Size = new System.Drawing.Size(73, 37);
+            this.btThemTG.TabIndex = 19;
+            this.btThemTG.Text = "Thêm";
+            this.btThemTG.UseVisualStyleBackColor = true;
+            this.btThemTG.Click += new System.EventHandler(this.btThemTG_Click);
             // 
             // txtGhiChu
             // 
@@ -116,11 +146,43 @@
             // dgvTacGia
             // 
             this.dgvTacGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTacGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Name,
+            this.Text,
+            this.btXoaTG});
             this.dgvTacGia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTacGia.Location = new System.Drawing.Point(0, 0);
             this.dgvTacGia.Name = "dgvTacGia";
             this.dgvTacGia.Size = new System.Drawing.Size(530, 450);
             this.dgvTacGia.TabIndex = 0;
+            this.dgvTacGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTacGia_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã tác giả";
+            this.ID.Name = "ID";
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Tên tác giả";
+            this.Name.Name = "Name";
+            // 
+            // Text
+            // 
+            this.Text.DataPropertyName = "Text";
+            this.Text.HeaderText = "Ghi chú";
+            this.Text.Name = "Text";
+            // 
+            // btXoaTG
+            // 
+            this.btXoaTG.DataPropertyName = "btXoaTG";
+            this.btXoaTG.HeaderText = "Xóa";
+            this.btXoaTG.Name = "btXoaTG";
+            this.btXoaTG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btXoaTG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmTacGia
             // 
@@ -128,9 +190,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "frmTacGia";
+            //this.Name = "frmTacGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TacGia";
             this.Load += new System.EventHandler(this.frmTacGia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -152,5 +213,11 @@
         private System.Windows.Forms.TextBox txtIDTacGia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvTacGia;
+        private System.Windows.Forms.Button btThemTG;
+        private System.Windows.Forms.Button btSuaTG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Text;
+        private System.Windows.Forms.DataGridViewButtonColumn btXoaTG;
     }
 }

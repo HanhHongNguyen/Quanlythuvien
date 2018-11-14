@@ -49,5 +49,18 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public bool UpdateDG(DocGia docGia)
+        {
+            try
+            {
+                return new DocGiaDAO().UpdateDG(docGia);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
