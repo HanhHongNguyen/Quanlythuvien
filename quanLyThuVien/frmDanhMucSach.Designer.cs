@@ -40,7 +40,6 @@
             this.txtTinhTrang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtMaTG = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.theloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboTG = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,6 +71,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboTG);
             this.splitContainer1.Panel1.Controls.Add(this.comboTheLoai);
             this.splitContainer1.Panel1.Controls.Add(this.btnSua);
             this.splitContainer1.Panel1.Controls.Add(this.btnXoa);
@@ -82,7 +83,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.txtTinhTrang);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.txtMaTG);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.txtTenSach);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
@@ -130,6 +130,7 @@
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_2);
             // 
             // txtNXB
             // 
@@ -187,13 +188,6 @@
             this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã thể loại :";
-            // 
-            // txtMaTG
-            // 
-            this.txtMaTG.Location = new System.Drawing.Point(148, 100);
-            this.txtMaTG.Name = "txtMaTG";
-            this.txtMaTG.Size = new System.Drawing.Size(202, 26);
-            this.txtMaTG.TabIndex = 1;
             // 
             // label3
             // 
@@ -311,6 +305,14 @@
             this.tacgia.Name = "tacgia";
             this.tacgia.Visible = false;
             // 
+            // comboTG
+            // 
+            this.comboTG.FormattingEnabled = true;
+            this.comboTG.Location = new System.Drawing.Point(148, 100);
+            this.comboTG.Name = "comboTG";
+            this.comboTG.Size = new System.Drawing.Size(202, 28);
+            this.comboTG.TabIndex = 4;
+            // 
             // frmDanhMucSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -346,7 +348,6 @@
         private System.Windows.Forms.TextBox txtTinhTrang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtMaTG;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTenSach;
         private System.Windows.Forms.Label label2;
@@ -363,5 +364,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn theloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn tacgia;
+        private System.Windows.Forms.ComboBox comboTG;
     }
 }

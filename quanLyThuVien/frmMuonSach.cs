@@ -68,18 +68,25 @@ namespace quanLyThuVien
         {
             try
             {
-                string idPM = txtMaPM.Text;
-                string date = ngayMuon.Value.ToString();
-                string idDG = txtMaDG.Text;
-                string idNV = txtMaNV.Text;
-                
-                PhieuMuon pm = new PhieuMuon(idPM, date, idDG, idNV);
-                bool b = new PhieuMuonBUS().DeletePM(pm);
-                if (b)
+                var senderGrid = (DataGridView)sender;
+
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                    e.RowIndex >= 0)
                 {
-                    MessageBox.Show("Xoa Thành Công");
+
+                    string idPM = txtMaPM.Text;
+                    string date = ngayMuon.Value.ToString();
+                    string idDG = txtMaDG.Text;
+                    string idNV = txtMaNV.Text;
+
+                    PhieuMuon pm = new PhieuMuon(idPM, date, idDG, idNV);
+                    bool b = new PhieuMuonBUS().DeletePM(pm);
+                    if (b)
+                    {
+                        MessageBox.Show("Xoa Thành Công");
+                    }
+                    Init();
                 }
-                Init();
 
             }
             catch (SqlException ex)

@@ -44,9 +44,7 @@ namespace quanLyThuVien
         }
 
         private void btnThem_Click(object sender, EventArgs e)
-        {
-            
-           
+        {  
             String id, name, address, phone, email;
             id = txtMaDG.Text;
             name = txtTenDG.Text;
@@ -78,19 +76,26 @@ namespace quanLyThuVien
         {
             try
             {
-                string id = txtMaDG.Text;
-                string name = txtTenDG.Text;
-                string address = txtDiaChiDG.Text;
-                string phone = txtSDT.Text;
-                string email = txtEmail.Text;
-                DocGia dg = new DocGia(id, name, address, phone, email);
-                bool b = new DocGiaBUS().DeleteDG(dg);
-                if (b)
-                {
-                    MessageBox.Show("Xoa Thành Công");
-                }
-                Init();
+                var senderGrid = (DataGridView)sender;
 
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                    e.RowIndex >= 0)
+                {
+
+                    string id = txtMaDG.Text;
+                    string name = txtTenDG.Text;
+                    string address = txtDiaChiDG.Text;
+                    string phone = txtSDT.Text;
+                    string email = txtEmail.Text;
+                    DocGia dg = new DocGia(id, name, address, phone, email);
+                    bool b = new DocGiaBUS().DeleteDG(dg);
+                    if (b)
+                    {
+                        MessageBox.Show("Xoa Thành Công");
+                    }
+                    Init();
+
+                }
             }
             catch (SqlException ex)
             {
