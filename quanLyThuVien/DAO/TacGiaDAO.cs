@@ -46,7 +46,7 @@ namespace DAO
         {
             string sql = "DELETE FROM TacGia WHERE MaTacGia = @id";
             List<SqlParameter> Parameters = new List<SqlParameter>();
-            Parameters.Add(new SqlParameter("@id", tg.ID));
+            Parameters.Add(new SqlParameter("@id", tg.MaTacGia));
             try
             {
                 return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
@@ -63,8 +63,8 @@ namespace DAO
         {
             string sql = "UPDATE TacGia SET TenTacGia = @name, GhiChu = @text WHERE MaTacGia = @id";
             List<SqlParameter> Parameters = new List<SqlParameter>();
-            Parameters.Add(new SqlParameter("@id", tgia.ID));
-            Parameters.Add(new SqlParameter("@name", tgia.Name));
+            Parameters.Add(new SqlParameter("@id", tgia.MaTacGia));
+            Parameters.Add(new SqlParameter("@name", tgia.TenTacGia));
             Parameters.Add(new SqlParameter("@text", tgia.Text));
             try
             {
@@ -82,8 +82,8 @@ namespace DAO
         {
             string sql = "INSERT INTO TacGia VALUES (@id,@name,@text)";
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@id", tacGia.ID));
-            parameters.Add(new SqlParameter("@name", tacGia.Name));
+            parameters.Add(new SqlParameter("@id", tacGia.MaTacGia));
+            parameters.Add(new SqlParameter("@name", tacGia.TenTacGia));
             parameters.Add(new SqlParameter("@text", tacGia.Text));
 
             try

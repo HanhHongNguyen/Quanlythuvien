@@ -29,8 +29,8 @@ namespace quanLyThuVien
             dgvSachChon.DataSource = list2;
             List<TacGia> listTG = new TacGiaBUS().getTacGia();
             (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).DataSource = listTG;
-            (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).DisplayMember = "Name";
-            (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).ValueMember = "ID";
+            (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).DisplayMember = "TenTacGia";
+            (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).ValueMember = "MaTacGia";
             (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
             List<TheLoai> listTL = new TheLoaiBUS().getTL();
             (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DataSource = listTL;

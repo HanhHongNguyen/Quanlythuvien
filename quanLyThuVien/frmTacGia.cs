@@ -31,9 +31,9 @@ namespace quanLyThuVien
             List<TacGia> list = new TacGiaBUS().getTacGia();
             dgvTacGia.DataSource = list;
             txtIDTacGia.DataBindings.Clear();
-            txtIDTacGia.DataBindings.Add("Text", list, "ID");
+            txtIDTacGia.DataBindings.Add("Text", list, "MaTacGia");
             txtTenTG.DataBindings.Clear();
-            txtTenTG.DataBindings.Add("Text", list, "Name");
+            txtTenTG.DataBindings.Add("Text", list, "TenTacGia");
             txtGhiChu.DataBindings.Clear();
             txtGhiChu.DataBindings.Add("Text", list, "Text");
             

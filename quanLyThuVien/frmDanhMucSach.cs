@@ -29,8 +29,12 @@ namespace quanLyThuVien
             comboTheLoai.ValueMember = "MaTheLoai";
             List<TacGia> list2 = new TacGiaBUS().getTacGia();
             comboTG.DataSource = list2;
-            comboTG.DisplayMember = "Name";
-            comboTG.ValueMember = "ID";
+            comboTG.DisplayMember = "TenTacGia";
+            comboTG.ValueMember = "MaTacGia";
+            List<Sach> list3 = new SachBUS().getSach();
+            cbbTenSach.DataSource = list3;
+            cbbTenSach.DisplayMember = "TenSach";
+            cbbTenSach.ValueMember = "MaSach";
         }
 
         public void Init()
@@ -38,15 +42,15 @@ namespace quanLyThuVien
             List<Sach> list = new SachBUS().getSach();
             dgvSach.DataSource = list;
             txtMaSach.DataBindings.Clear();
-            txtMaSach.DataBindings.Add("Text", list, "IDSach");
+            txtMaSach.DataBindings.Add("Text", list, "MaSach");
             txtTenSach.DataBindings.Clear();
             txtTenSach.DataBindings.Add("Text", list, "TenSach");
             comboTG.DataBindings.Clear();
-            comboTG.DataBindings.Add("SelectedValue", list, "IDTacGia");
+            comboTG.DataBindings.Add("SelectedValue", list, "MaTacGia");
             comboTheLoai.DataBindings.Clear();
-            comboTheLoai.DataBindings.Add("SelectedValue", list, "IDTheLoai");
+            comboTheLoai.DataBindings.Add("SelectedValue", list, "MaTheLoai");
             txtNXB.DataBindings.Clear();
-            txtNXB.DataBindings.Add("Text", list, "NXB");
+            txtNXB.DataBindings.Add("Text", list, "NamXB");
             txtTinhTrang.DataBindings.Clear();
             txtTinhTrang.DataBindings.Add("Text", list, "TinhTrang");
         }
@@ -119,8 +123,8 @@ namespace quanLyThuVien
             int nxb;
             idsach = txtMaSach.Text;
             tensach = txtTenSach.Text;
-            idtacgia = comboTG.SelectedIndex.ToString();
-            idtheloai = comboTheLoai.SelectedIndex.ToString();
+            idtacgia = comboTG.SelectedValue.ToString();
+            idtheloai = comboTheLoai.SelectedValue.ToString();
             nxb = int.Parse(txtNXB.Text);
             tinhtrang = txtTinhTrang.Text;
 
@@ -132,12 +136,32 @@ namespace quanLyThuVien
                 bool b = new SachBUS().UpdateSa(sach);
                 Init();
                 dgvSach.DataSource = new SachBUS().getSach();
+                MessageBox.Show("Sửa thông tin sách thành công\n");
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi sửa tác giả\n" + ex.Message);
+                MessageBox.Show("Lỗi sửa thông tin sách\n" + ex.Message);
 
             }
         }
+
+        private void txtTimSach_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string idSach = cbbTenSach.SelectedValue.ToString();
+            DataTable tb = new SachBUS().TimkiemtheoTen(idSach);
+            dgvSach.DataSource = tb;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Init();
+        }
+
+        
     }
 }

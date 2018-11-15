@@ -39,11 +39,11 @@ namespace quanLyThuVien
 
         private void frmTraSach_Load(object sender, EventArgs e)
         {
-            Init();
             List<PhieuTra> list = new PhieuTraBUS().getPT();
             dgvPT.DataSource = list;
             List<SachMuon> list2 = new PhieuTraBUS().getSM();
             dgvPM.DataSource = list2;
+            Init();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

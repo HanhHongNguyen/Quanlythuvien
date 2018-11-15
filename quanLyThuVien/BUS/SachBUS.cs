@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -56,6 +57,18 @@ namespace BUS
             try
             {
                 return new SachDAO().UpdateSa(sach);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+        public DataTable TimkiemtheoTen(string idsach)
+        {
+            try
+            {
+                return new SachDAO().TimkiemtheoTen(idsach);
             }
             catch (SqlException ex)
             {

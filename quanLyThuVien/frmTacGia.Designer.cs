@@ -158,17 +158,17 @@
             this.dgvTacGia.TabIndex = 0;
             this.dgvTacGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTacGia_CellContentClick);
             // 
-            // ID
+            // MaTacGia
             // 
-            this.ID.DataPropertyName = "ID";
+            this.ID.DataPropertyName = "MaTacGia";
             this.ID.HeaderText = "Mã tác giả";
-            this.ID.Name = "ID";
+            this.ID.Name = "MaTacGia";
             // 
-            // Name
+            // TenTacGia
             // 
-            this.Name.DataPropertyName = "Name";
+            this.Name.DataPropertyName = "TenTacGia";
             this.Name.HeaderText = "Tên tác giả";
-            this.Name.Name = "Name";
+            this.Name.Name = "TenTacGia";
             // 
             // Text
             // 
@@ -190,7 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            //this.Name = "frmTacGia";
+            //this.TenTacGia = "frmTacGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmTacGia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

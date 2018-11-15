@@ -55,11 +55,11 @@ namespace DAO
         {
             string sql = "INSERT INTO Sach VALUES (@idsach,@tensach,@idtacgia,@idtheloai,@nxb,@tinhtrang)";
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@idsach", sach.IDSach));
+            parameters.Add(new SqlParameter("@idsach", sach.MaSach));
             parameters.Add(new SqlParameter("@tensach", sach.TenSach));
-            parameters.Add(new SqlParameter("@idtacgia", sach.IDTacGia));
-            parameters.Add(new SqlParameter("@idtheloai", sach.IDTheLoai));
-            parameters.Add(new SqlParameter("@nxb", sach.NXB));
+            parameters.Add(new SqlParameter("@idtacgia", sach.MaTacGia));
+            parameters.Add(new SqlParameter("@idtheloai", sach.MaTheLoai));
+            parameters.Add(new SqlParameter("@nxb", sach.NamXB));
             parameters.Add(new SqlParameter("@tinhtrang", sach.TinhTrang));
 
             try
@@ -76,7 +76,7 @@ namespace DAO
         {
             string sql = "DELETE FROM Sach WHERE MaSach = @idsach";
             List<SqlParameter> Parameters = new List<SqlParameter>();
-            Parameters.Add(new SqlParameter("@idsach", s.IDSach));
+            Parameters.Add(new SqlParameter("@idsach", s.MaSach));
             try
             {
                 return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
@@ -91,13 +91,13 @@ namespace DAO
 
         public bool UpdateSa(Sach sach)
         {
-            string sql = "UPDATE Sach SET TenSach = @tensach, MaTacGia = @idtacgia, MaTheLoai = @idtheloai, NXB = @nxb, TinhTrang= @tinhtrang WHERE MaSach = @idsach";
+            string sql = "UPDATE Sach SET TenSach = @tensach, MaTacGia = @idtacgia, MaTheLoai = @idtheloai, NamXB = @nxb, TinhTrang= @tinhtrang WHERE MaSach = @idsach";
             List<SqlParameter> Parameters = new List<SqlParameter>();
-            Parameters.Add(new SqlParameter("@idsach", sach.IDSach));
+            Parameters.Add(new SqlParameter("@idsach", sach.MaSach));
             Parameters.Add(new SqlParameter("@tensach", sach.TenSach));
-            Parameters.Add(new SqlParameter("@idtacgia", sach.IDTacGia));
-            Parameters.Add(new SqlParameter("@idtheloai", sach.IDTheLoai));
-            Parameters.Add(new SqlParameter("@nxb", sach.NXB));
+            Parameters.Add(new SqlParameter("@idtacgia", sach.MaTacGia));
+            Parameters.Add(new SqlParameter("@idtheloai", sach.MaTheLoai));
+            Parameters.Add(new SqlParameter("@nxb", sach.NamXB));
             Parameters.Add(new SqlParameter("@tinhtrang", sach.TinhTrang));
             try
             {
@@ -109,6 +109,11 @@ namespace DAO
 
                 throw ex;
             }
+        }
+        public DataTable TimkiemtheoTen(string idSach)
+        {
+            string sql = "SELECT * FROM Sach WHERE MaSach LIKE N'%" + idSach + "%'";
+            return find(sql);
         }
     }
 }
