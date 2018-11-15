@@ -13,7 +13,6 @@ namespace DAO
         {
             string sql = "SELECT * FROM PhieuMuon";
             string idPM, date, idDG, idNV;
-            int tienCoc;
 
             List<PhieuMuon> list = new List<PhieuMuon>();
             Connect();
@@ -44,8 +43,8 @@ namespace DAO
         }
         public List<Sach> getSachMuon()
         {
-            string sql = "SELECT MaSach, TenSach,  NamXB, TenTacGia, TenTheLoai FROM Sach, TacGia, TheLoai WHERE Sach.MaTacGia = TacGia.MaTacGia AND Sach.MaTheLoai = TheLoai.MaTheLoai";
-            string idSach, nameSach, theloai, tacgia;
+            string sql = "SELECT * FROM Sach";
+            string idSach, nameSach, idtheloai, idtacgia,tinhtrang;
             int nxb;
 
             List<Sach> list = new List<Sach>();
@@ -58,11 +57,11 @@ namespace DAO
                 {
                     idSach = dr[0].ToString();
                     nameSach = dr[1].ToString();
-                    nxb = int.Parse(dr[2].ToString());
-                    tacgia = dr[3].ToString();
-                    theloai = dr[4].ToString();
-                   
-                    Sach sachmuon = new Sach(idSach, nameSach, nxb,tacgia, theloai );
+                    idtacgia = dr[2].ToString();
+                    idtheloai = dr[3].ToString();
+                    nxb = int.Parse(dr[4].ToString());
+                    tinhtrang = dr[5].ToString();
+                    Sach sachmuon = new Sach(idSach, nameSach,idtacgia, idtheloai, nxb,tinhtrang);
                     list.Add(sachmuon);
                 }
                 dr.Close();
@@ -87,6 +86,22 @@ namespace DAO
             parameters.Add(new SqlParameter("@idDG", pm.MaDG));
             parameters.Add(new SqlParameter("@idNV", pm.MaNV));
 
+            try
+            {
+                return (myExecuteNonQuery(sql, CommandType.Text, parameters));
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+        public int AddSM(SachMuon sm)
+        {
+            string sql = "INSERT INTO MuonSach VALUES (@idPM,@idSach)";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@idPM", sm.MaPM));
+            parameters.Add(new SqlParameter("@idSach", sm.MaSach));
             try
             {
                 return (myExecuteNonQuery(sql, CommandType.Text, parameters));
