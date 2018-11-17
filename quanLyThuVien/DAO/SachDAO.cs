@@ -13,7 +13,7 @@ namespace DAO
         {
             string sql = "SELECT * FROM Sach";
             string idSach, TenSach, idTacGia, idTheLoai, TinhTrang;
-            int GiaThue, NXB;
+            int NXB;
             List<Sach> list = new List<Sach>();
             Connect();
 
@@ -27,10 +27,9 @@ namespace DAO
                     idTacGia = dr[2].ToString();
                     idTheLoai = dr[3].ToString();
                     NXB = int.Parse(dr[4].ToString()); 
-                    GiaThue = int.Parse(dr[5].ToString());
-                    TinhTrang = dr[6].ToString();
+                    TinhTrang = dr[5].ToString();
 
-                    Sach s = new Sach(idSach, TenSach, idTacGia, idTheLoai, NXB, GiaThue, TinhTrang);
+                    Sach s = new Sach(idSach, TenSach, idTacGia, idTheLoai, NXB, TinhTrang);
                     list.Add(s);
                 }
                 dr.Close();
@@ -49,19 +48,56 @@ namespace DAO
 
         public int Add(Sach sach)
         {
-            string sql = "INSERT INTO Sach VALUES (@idsach,@tensach,@idtacgia,@idtheloai,@nxb,@giathue,@tinhtrang)";
+            string sql = "INSERT INTO Sach VALUES (@idsach,@tensach,@idtacgia,@idtheloai,@nxb,@tinhtrang)";
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@idsach", sach.IDSach));
             parameters.Add(new SqlParameter("@tensach", sach.TenSach));
             parameters.Add(new SqlParameter("@idtacgia", sach.IDTacGia));
             parameters.Add(new SqlParameter("@idtheloai", sach.IDTheLoai));
             parameters.Add(new SqlParameter("@nxb", sach.NXB));
-            parameters.Add(new SqlParameter("@giathue", sach.GiaThue));
             parameters.Add(new SqlParameter("@tinhtrang", sach.TinhTrang));
 
             try
             {
                 return (myExecuteNonQuery(sql, CommandType.Text, parameters));
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+        public bool DeleteSach(Sach s)
+        {
+            string sql = "DELETE FROM Sach WHERE MaSach = @idsach";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@idsach", s.IDSach));
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool UpdateSa(Sach sach)
+        {
+            string sql = "UPDATE Sach SET TenSach = @tensach, MaTacGia = @idtacgia, MaTheLoai = @idtheloai, NamXB = @nxb, TinhTrang= @tinhtrang WHERE MaSach = @idsach";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@idsach", sach.IDSach));
+            Parameters.Add(new SqlParameter("@tensach", sach.TenSach));
+            Parameters.Add(new SqlParameter("@idtacgia", sach.IDTacGia));
+            Parameters.Add(new SqlParameter("@idtheloai", sach.IDTheLoai));
+            Parameters.Add(new SqlParameter("@nxb", sach.NXB));
+            Parameters.Add(new SqlParameter("@tinhtrang", sach.TinhTrang));
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
             }
             catch (SqlException ex)
             {

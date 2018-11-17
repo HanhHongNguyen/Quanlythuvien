@@ -23,34 +23,91 @@ namespace quanLyThuVien
               
         private void frmDanhMucSach_Load(object sender, EventArgs e)
         {
-            List<Sach> list = new SachBUS().getSach();
-            dgvSach.DataSource = list;
+            Init();
             List<TheLoai> list1 = new TheLoaiBUS().getTL();
             comboTheLoai.DataSource = list1;
             comboTheLoai.DisplayMember = "TenTheLoai";
-            //comboTheLoai.ValueMember = "MaTheLoai";
+            comboTheLoai.ValueMember = "MaTheLoai";
+            List<TacGia> list2 = new TacGiaBUS().getTacGia();
+            comboTG.DataSource = list2;
+            comboTG.DisplayMember = "Name";
+            comboTG.ValueMember = "ID";
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        public void Init()
+        {
+            List<Sach> list = new SachBUS().getSach();
+            dgvSach.DataSource = list;
+            txtMaSach.DataBindings.Clear();
+            txtMaSach.DataBindings.Add("Text", list, "IDSach");
+            txtTenSach.DataBindings.Clear();
+            txtTenSach.DataBindings.Add("Text", list, "TenSach");
+            comboTG.DataBindings.Clear();
+            comboTG.DataBindings.Add("SelectedValue", list, "IDTacGia");
+            comboTheLoai.DataBindings.Clear();
+            comboTheLoai.DataBindings.Add("SelectedValue", list, "IDTheLoai");
+            txtNXB.DataBindings.Clear();
+            txtNXB.DataBindings.Add("Text", list, "NXB");
+            txtTinhTrang.DataBindings.Clear();
+            txtTinhTrang.DataBindings.Add("Text", list, "TinhTrang");
+        }
+
+       
+         
+
+        private void dgvSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var senderGrid = (DataGridView)sender;
+
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                    e.RowIndex >= 0)
+                {
+                    string idSach = txtMaSach.Text;
+                    string name = txtTenSach.Text;
+                    string idTG = comboTG.ToString();
+                    string idTL = comboTheLoai.ToString();
+                    string tinhTrang = txtTinhTrang.Text;
+                    int nxb = int.Parse(txtNXB.Text);
+                    Sach s = new Sach(idSach, name, idTG, idTL, nxb, tinhTrang);
+                    bool b = new SachBUS().DeleteSach(s);
+                    if (b)
+                    {
+                        MessageBox.Show("Xóa Thành Công");
+                    }
+                    Init();
+                }
+                   
+
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Xoa that bai", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnThem_Click_2(object sender, EventArgs e)
         {
             string idsach, tensach, idtacgia, idtheloai, tinhtrang;
-            int giathue, nxb;
+            int nxb;
             idsach = txtMaSach.Text;
             tensach = txtTenSach.Text;
-            idtacgia = txtMaTG.Text;
-            idtheloai = comboTheLoai.Text;
+            idtacgia = comboTG.SelectedValue.ToString();
+            idtheloai = comboTheLoai.SelectedValue.ToString();
             nxb = int.Parse(txtNXB.Text);
-            giathue = int.Parse(txtGiaThue.Text);
             tinhtrang = txtTinhTrang.Text;
-           
 
-            Sach sach = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, giathue, tinhtrang );
+            Sach sach = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, tinhtrang);
 
             try
             {
                 int numerOfRows = new SachBUS().Add(sach);
-                dgvSach.DataSource = sachBUS.getSach();
+                MessageBox.Show("Them thanh cong");
+                Init();
             }
+
             catch (SqlException ex)
             {
                 MessageBox.Show("Loi them sach\n" + ex.Message);
@@ -58,31 +115,31 @@ namespace quanLyThuVien
             }
         }
 
-        private void comboTheLoai_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
-            //ComboBox cb = sender as ComboBox;
-            //cb.SelectedIndex.ToString();
-        }
+            string idsach, tensach, idtacgia, idtheloai, tinhtrang;
+            int nxb;
+            idsach = txtMaSach.Text;
+            tensach = txtTenSach.Text;
+            idtacgia = comboTG.SelectedValue.ToString();
+            idtheloai = comboTheLoai.SelectedValue.ToString();
+            nxb = int.Parse(txtNXB.Text);
+            tinhtrang = txtTinhTrang.Text;
 
-        private void comboTinhTrang_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //ComboBox cb = sender as ComboBox;
-            //int index= Convert.ToInt32(cb.SelectedValue);
-        }
+            Sach sach = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, tinhtrang);
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
+            try
+            {
+                bool b = new SachBUS().UpdateSa(sach);
+                Init();
+                dgvSach.DataSource = new SachBUS().getSach();
+                MessageBox.Show("Sửa thông tin sách thành công\n");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi sửa thông tin sách\n" + ex.Message);
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenSach_TextChanged(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }

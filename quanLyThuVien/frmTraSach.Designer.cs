@@ -1,6 +1,6 @@
 ﻿namespace quanLyThuVien
 {
-    partial class lbMaDG
+    partial class frmTraSach
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,33 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.comboMaNV = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.ngayTra = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lbMaDocGia = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnTimPM = new System.Windows.Forms.Button();
             this.txtMaPM = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaPT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dgvPM = new System.Windows.Forms.DataGridView();
-            this.dgvSachMuon = new System.Windows.Forms.DataGridView();
+            this.MaPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPT = new System.Windows.Forms.DataGridView();
+            this.MaPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDG1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,12 +64,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSachMuon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,18 +72,20 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnSave);
+            this.splitContainer1.Panel1.Controls.Add(this.comboMaNV);
+            this.splitContainer1.Panel1.Controls.Add(this.btnUpdate);
+            this.splitContainer1.Panel1.Controls.Add(this.ngayTra);
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel1.Controls.Add(this.lbMaDocGia);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.btnTimPM);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaPM);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.txtMaNV);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaPT);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -84,192 +93,262 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1121, 575);
-            this.splitContainer1.SplitterDistance = 455;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(918, 467);
+            this.splitContainer1.SplitterDistance = 373;
             this.splitContainer1.TabIndex = 0;
             // 
-            // btnSave
+            // comboMaNV
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(121, 238);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(107, 53);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "LƯU";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.comboMaNV.FormattingEnabled = true;
+            this.comboMaNV.Location = new System.Drawing.Point(101, 127);
+            this.comboMaNV.Name = "comboMaNV";
+            this.comboMaNV.Size = new System.Drawing.Size(128, 21);
+            this.comboMaNV.TabIndex = 15;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(156, 232);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "SỬA";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // ngayTra
+            // 
+            this.ngayTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ngayTra.Location = new System.Drawing.Point(101, 94);
+            this.ngayTra.Name = "ngayTra";
+            this.ngayTra.Size = new System.Drawing.Size(128, 20);
+            this.ngayTra.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Ngày trả :";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(12, 233);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "THÊM";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbMaDocGia
             // 
             this.lbMaDocGia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbMaDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaDocGia.Location = new System.Drawing.Point(121, 166);
-            this.lbMaDocGia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbMaDocGia.Location = new System.Drawing.Point(103, 166);
             this.lbMaDocGia.Name = "lbMaDocGia";
-            this.lbMaDocGia.Size = new System.Drawing.Size(204, 33);
+            this.lbMaDocGia.Size = new System.Drawing.Size(126, 27);
             this.lbMaDocGia.TabIndex = 3;
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 166);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 167);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 33);
+            this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Mã độc giả :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Text = "Mã đọc giả :";
             // 
             // btnTimPM
             // 
-            this.btnTimPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimPM.Location = new System.Drawing.Point(362, 15);
-            this.btnTimPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimPM.Location = new System.Drawing.Point(250, 21);
             this.btnTimPM.Name = "btnTimPM";
-            this.btnTimPM.Size = new System.Drawing.Size(71, 28);
+            this.btnTimPM.Size = new System.Drawing.Size(75, 23);
             this.btnTimPM.TabIndex = 2;
             this.btnTimPM.Text = "TÌM";
             this.btnTimPM.UseVisualStyleBackColor = true;
-            this.btnTimPM.Click += new System.EventHandler(this.btnTimPM_Click);
+            this.btnTimPM.Click += new System.EventHandler(this.btnTimPM_Click_1);
             // 
             // txtMaPM
             // 
-            this.txtMaPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPM.Location = new System.Drawing.Point(121, 17);
-            this.txtMaPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaPM.Location = new System.Drawing.Point(103, 21);
             this.txtMaPM.Name = "txtMaPM";
-            this.txtMaPM.Size = new System.Drawing.Size(204, 26);
+            this.txtMaPM.Size = new System.Drawing.Size(126, 20);
             this.txtMaPM.TabIndex = 1;
+            this.txtMaPM.TextChanged += new System.EventHandler(this.txtMaPM_TextChanged);
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 21);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã PM :";
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(121, 113);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(204, 26);
-            this.txtMaNV.TabIndex = 1;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 113);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 22);
+            this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã NV :";
             // 
             // txtMaPT
             // 
-            this.txtMaPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPT.Location = new System.Drawing.Point(121, 64);
-            this.txtMaPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaPT.Location = new System.Drawing.Point(103, 65);
             this.txtMaPT.Name = "txtMaPT";
-            this.txtMaPT.Size = new System.Drawing.Size(204, 26);
+            this.txtMaPT.Size = new System.Drawing.Size(126, 20);
             this.txtMaPT.TabIndex = 1;
+            this.txtMaPT.TextChanged += new System.EventHandler(this.txtMaPT_TextChanged);
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 64);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 22);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã PT :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Panel1.Controls.Add(this.dgvPM);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgvPT);
-            this.splitContainer2.Size = new System.Drawing.Size(661, 575);
-            this.splitContainer2.SplitterDistance = 281;
-            this.splitContainer2.SplitterWidth = 5;
+            this.splitContainer2.Size = new System.Drawing.Size(541, 467);
+            this.splitContainer2.SplitterDistance = 229;
             this.splitContainer2.TabIndex = 0;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.dgvPM);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.dgvSachMuon);
-            this.splitContainer3.Size = new System.Drawing.Size(661, 281);
-            this.splitContainer3.SplitterDistance = 403;
-            this.splitContainer3.SplitterWidth = 5;
-            this.splitContainer3.TabIndex = 0;
             // 
             // dgvPM
             // 
+            this.dgvPM.AllowUserToAddRows = false;
+            this.dgvPM.AllowUserToDeleteRows = false;
             this.dgvPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaPM,
+            this.Date,
+            this.MaDG,
+            this.MaNV,
+            this.MaSach,
+            this.TenSach});
             this.dgvPM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPM.Location = new System.Drawing.Point(0, 0);
-            this.dgvPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPM.Name = "dgvPM";
-            this.dgvPM.Size = new System.Drawing.Size(403, 281);
-            this.dgvPM.TabIndex = 0;
+            this.dgvPM.ReadOnly = true;
+            this.dgvPM.Size = new System.Drawing.Size(541, 229);
+            this.dgvPM.TabIndex = 2;
+            this.dgvPM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPM_CellContentClick);
             // 
-            // dgvSachMuon
+            // MaPM
             // 
-            this.dgvSachMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSachMuon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSachMuon.Location = new System.Drawing.Point(0, 0);
-            this.dgvSachMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvSachMuon.Name = "dgvSachMuon";
-            this.dgvSachMuon.Size = new System.Drawing.Size(253, 281);
-            this.dgvSachMuon.TabIndex = 0;
+            this.MaPM.DataPropertyName = "MaPM";
+            this.MaPM.HeaderText = "Mã PM";
+            this.MaPM.Name = "MaPM";
+            this.MaPM.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "NgayMuon";
+            this.Date.HeaderText = "Ngày mượn";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // MaDG
+            // 
+            this.MaDG.DataPropertyName = "MaDG";
+            this.MaDG.HeaderText = "Mã đọc giả";
+            this.MaDG.Name = "MaDG";
+            this.MaDG.ReadOnly = true;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã nhân viên";
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã Sách";
+            this.MaSach.Name = "MaSach";
+            this.MaSach.ReadOnly = true;
+            // 
+            // TenSach
+            // 
+            this.TenSach.DataPropertyName = "TenSach";
+            this.TenSach.HeaderText = "Tên Sách";
+            this.TenSach.Name = "TenSach";
+            this.TenSach.ReadOnly = true;
             // 
             // dgvPT
             // 
             this.dgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaPT,
+            this.DateTra,
+            this.MaDG1,
+            this.MaNV1,
+            this.Delete});
             this.dgvPT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPT.Location = new System.Drawing.Point(0, 0);
-            this.dgvPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPT.Name = "dgvPT";
-            this.dgvPT.Size = new System.Drawing.Size(661, 289);
+            this.dgvPT.Size = new System.Drawing.Size(541, 234);
             this.dgvPT.TabIndex = 0;
             // 
-            // lbMaDG
+            // MaPT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.MaPT.DataPropertyName = "MaPT";
+            this.MaPT.HeaderText = "Mã phiếu trả";
+            this.MaPT.Name = "MaPT";
+            // 
+            // DateTra
+            // 
+            this.DateTra.DataPropertyName = "NgayTra";
+            this.DateTra.HeaderText = "Ngày trả";
+            this.DateTra.Name = "DateTra";
+            // 
+            // MaDG1
+            // 
+            this.MaDG1.DataPropertyName = "MaDG";
+            this.MaDG1.HeaderText = "Mã đọc giả";
+            this.MaDG1.Name = "MaDG1";
+            // 
+            // MaNV1
+            // 
+            this.MaNV1.DataPropertyName = "MaNV";
+            this.MaNV1.HeaderText = "Mã nhân viên";
+            this.MaNV1.Name = "MaNV1";
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Xóa";
+            this.Delete.Name = "Delete";
+            // 
+            // frmTraSach
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 575);
+            this.ClientSize = new System.Drawing.Size(918, 467);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "lbMaDG";
+            this.Name = "frmTraSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Trả sách";
+            this.Load += new System.EventHandler(this.frmTraSach_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -279,12 +358,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSachMuon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPT)).EndInit();
             this.ResumeLayout(false);
 
@@ -299,14 +373,26 @@
         private System.Windows.Forms.Button btnTimPM;
         private System.Windows.Forms.TextBox txtMaPM;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvPT;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbMaDocGia;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.DateTimePicker ngayTra;
         private System.Windows.Forms.DataGridView dgvPM;
-        private System.Windows.Forms.DataGridView dgvSachMuon;
-        private System.Windows.Forms.DataGridView dgvPT;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDG1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV1;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.ComboBox comboMaNV;
     }
 }

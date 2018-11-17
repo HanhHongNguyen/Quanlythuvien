@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btSuaTG = new System.Windows.Forms.Button();
+            this.btThemTG = new System.Windows.Forms.Button();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenTG = new System.Windows.Forms.TextBox();
@@ -36,6 +38,10 @@
             this.txtIDTacGia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTacGia = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btXoaTG = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -47,42 +53,64 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btSuaTG);
+            this.splitContainer1.Panel1.Controls.Add(this.btThemTG);
             this.splitContainer1.Panel1.Controls.Add(this.txtGhiChu);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.txtTenTG);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.txtIDTacGia);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
+           
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvTacGia);
-            this.splitContainer1.Size = new System.Drawing.Size(1066, 487);
-            this.splitContainer1.SplitterDistance = 354;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(800, 396);
+            this.splitContainer1.SplitterDistance = 265;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btSuaTG
+            // 
+            this.btSuaTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSuaTG.Location = new System.Drawing.Point(185, 162);
+            this.btSuaTG.Margin = new System.Windows.Forms.Padding(2);
+            this.btSuaTG.Name = "btSuaTG";
+            this.btSuaTG.Size = new System.Drawing.Size(57, 30);
+            this.btSuaTG.TabIndex = 20;
+            this.btSuaTG.Text = "Sửa";
+            this.btSuaTG.UseVisualStyleBackColor = true;
+            this.btSuaTG.Click += new System.EventHandler(this.btSuaTG_Click);
+            // 
+            // btThemTG
+            // 
+            this.btThemTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThemTG.Location = new System.Drawing.Point(37, 162);
+            this.btThemTG.Margin = new System.Windows.Forms.Padding(2);
+            this.btThemTG.Name = "btThemTG";
+            this.btThemTG.Size = new System.Drawing.Size(71, 30);
+            this.btThemTG.TabIndex = 19;
+            this.btThemTG.Text = "Thêm";
+            this.btThemTG.UseVisualStyleBackColor = true;
+            this.btThemTG.Click += new System.EventHandler(this.btThemTG_Click);
             // 
             // txtGhiChu
             // 
             this.txtGhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGhiChu.Location = new System.Drawing.Point(128, 143);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGhiChu.Location = new System.Drawing.Point(96, 116);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(193, 26);
+            this.txtGhiChu.Size = new System.Drawing.Size(146, 26);
             this.txtGhiChu.TabIndex = 5;
-            this.txtGhiChu.TextChanged += new System.EventHandler(this.txtGhiChu_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 149);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(13, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 2;
@@ -91,19 +119,16 @@
             // txtTenTG
             // 
             this.txtTenTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenTG.Location = new System.Drawing.Point(128, 84);
-            this.txtTenTG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenTG.Location = new System.Drawing.Point(96, 68);
             this.txtTenTG.Name = "txtTenTG";
-            this.txtTenTG.Size = new System.Drawing.Size(193, 26);
+            this.txtTenTG.Size = new System.Drawing.Size(146, 26);
             this.txtTenTG.TabIndex = 6;
-            this.txtTenTG.TextChanged += new System.EventHandler(this.txtTenTG_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(13, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 20);
             this.label2.TabIndex = 3;
@@ -112,18 +137,16 @@
             // txtIDTacGia
             // 
             this.txtIDTacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDTacGia.Location = new System.Drawing.Point(128, 27);
-            this.txtIDTacGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIDTacGia.Location = new System.Drawing.Point(96, 22);
             this.txtIDTacGia.Name = "txtIDTacGia";
-            this.txtIDTacGia.Size = new System.Drawing.Size(193, 26);
+            this.txtIDTacGia.Size = new System.Drawing.Size(146, 26);
             this.txtIDTacGia.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 4;
@@ -132,24 +155,53 @@
             // dgvTacGia
             // 
             this.dgvTacGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTacGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Name,
+            this.Text,
+            this.btXoaTG});
             this.dgvTacGia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTacGia.Location = new System.Drawing.Point(0, 0);
-            this.dgvTacGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvTacGia.Name = "dgvTacGia";
-            this.dgvTacGia.Size = new System.Drawing.Size(707, 487);
+            this.dgvTacGia.Size = new System.Drawing.Size(531, 396);
             this.dgvTacGia.TabIndex = 0;
+            this.dgvTacGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTacGia_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã tác giả";
+            this.ID.Name = "ID";
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Tên tác giả";
+            this.Name.Name = "Name";
+            // 
+            // Text
+            // 
+            this.Text.DataPropertyName = "Text";
+            this.Text.HeaderText = "Ghi chú";
+            this.Text.Name = "Text";
+            // 
+            // btXoaTG
+            // 
+            this.btXoaTG.DataPropertyName = "btXoaTG";
+            this.btXoaTG.HeaderText = "Xóa";
+            this.btXoaTG.Name = "btXoaTG";
+            this.btXoaTG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btXoaTG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmTacGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 487);
+            this.ClientSize = new System.Drawing.Size(800, 396);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmTacGia";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TacGia";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            //this.Name = "frmTacGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmTacGia_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -171,5 +223,11 @@
         private System.Windows.Forms.TextBox txtIDTacGia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvTacGia;
+        private System.Windows.Forms.Button btThemTG;
+        private System.Windows.Forms.Button btSuaTG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Text;
+        private System.Windows.Forms.DataGridViewButtonColumn btXoaTG;
     }
 }

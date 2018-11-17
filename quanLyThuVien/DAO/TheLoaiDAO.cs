@@ -59,6 +59,41 @@ namespace DAO
                 Disconnect();
             }
         }
+
+        public bool UpdateTL(TheLoai tloai)
+        {
+            string sql = "UPDATE TheLoai SET TenTheLoai = @tenTL WHERE MaTheLoai = @maTL";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@maTL", tloai.MaTheLoai));
+            Parameters.Add(new SqlParameter("@tenTL", tloai.TenTheLoai));
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool DeleteTL(TheLoai tl)
+        {
+            string sql = "DELETE FROM TheLoai WHERE MatheLoai = @maTL";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@maTL", tl.MaTheLoai));
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
 

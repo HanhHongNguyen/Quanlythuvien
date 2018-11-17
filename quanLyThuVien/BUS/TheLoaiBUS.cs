@@ -33,5 +33,35 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public bool DeleteTL(TheLoai tl)
+        {
+            try
+            {
+                return new TheLoaiDAO().DeleteTL(tl);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool UpdateTL(TheLoai tloai)
+        {
+            try
+            {
+                return new TheLoaiDAO().UpdateTL(tloai);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
-}
+    }
+
+
+

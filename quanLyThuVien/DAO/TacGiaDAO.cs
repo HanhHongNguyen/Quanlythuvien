@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -40,5 +41,61 @@ namespace DAO
                 Disconnect();
             }
         }
+
+        public bool DeleteTG(TacGia tg)
+        {
+            string sql = "DELETE FROM TacGia WHERE MaTacGia = @id";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@id", tg.ID));
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool UpdateTG(TacGia tgia)
+        {
+            string sql = "UPDATE TacGia SET TenTacGia = @name, GhiChu = @text WHERE MaTacGia = @id";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@id", tgia.ID));
+            Parameters.Add(new SqlParameter("@name", tgia.Name));
+            Parameters.Add(new SqlParameter("@text", tgia.Text));
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public int AddTG(TacGia tacGia)
+        {
+            string sql = "INSERT INTO TacGia VALUES (@id,@name,@text)";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", tacGia.ID));
+            parameters.Add(new SqlParameter("@name", tacGia.Name));
+            parameters.Add(new SqlParameter("@text", tacGia.Text));
+
+            try
+            {
+                return (myExecuteNonQuery(sql, CommandType.Text, parameters));
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+        
     }
 }

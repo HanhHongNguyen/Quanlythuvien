@@ -11,6 +11,7 @@ namespace DAO
             string sql = "SELECT * FROM DocGia";
             string id, name, address, sdt, email;
             List<DocGia> list = new List<DocGia>();
+           
             Connect();
 
             try
@@ -39,6 +40,28 @@ namespace DAO
             {
                 Disconnect();
             }
+            
+        }
+
+        public bool UpdateDG(DocGia docGia)
+        {
+            string sql = "UPDATE DocGia SET TenDocGia = @name, DiaChi = @address, SDT = @phone, Email = @email Where MaDocGia = @id";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@id", docGia.MaDG));
+            Parameters.Add(new SqlParameter("@name", docGia.TenDG));
+            Parameters.Add(new SqlParameter("@address", docGia.DiaChi));
+            Parameters.Add(new SqlParameter("@phone", docGia.SDT));
+            Parameters.Add(new SqlParameter("@email", docGia.Email));
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
         }
 
         
@@ -62,15 +85,15 @@ namespace DAO
                 throw ex;
             }
         }
-        public int DeleteDG (string id)
+        public bool DeleteDG(DocGia dg)
         {
-            string sql = "DELETE FROM DocGia WHERE MaDocGia = '" + id + "'";
-            List<SqlParameter> Parameters = new List<SqlParameter>();   
-            Parameters.Add(new SqlParameter("MaDocGia", id));
+            string sql = "DELETE FROM DocGia WHERE MaDocGia = @id";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@id", dg.MaDG));
             try
             {
-                int sohang = myExecuteNonQuery(sql, CommandType.Text, Parameters);
-                return sohang;
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
             }
             catch (SqlException ex)
             {
@@ -78,21 +101,6 @@ namespace DAO
                 throw ex;
             }
         }
-        //public int UpdateDG(DocGia dg)
-        //{
-
-        //    string sql = "UPDATE Sinhvien SET MaDocGia='" + dg.MaDG + "', TenDocGia = N'" + dg.TenDG + "', DiaChi= N'" + dg.DiaChi + "', SDT= N'" + dg.SDT + "',Email= N'" + dg.Email + "' where MaDocGia = '" + dg.MaDG + "'";
-
-        //    try
-        //    {
-        //        int sohang = myExcuteNonQuery(sql, CommandType.Text, Parameters);
-        //        return sohang;
-        //    }
-        //    catch (SqlException ex)
-        //    {
-
-        //        throw ex;
-        //    }
-        //}
+        
     }
 }

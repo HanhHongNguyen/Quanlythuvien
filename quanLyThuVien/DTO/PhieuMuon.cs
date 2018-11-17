@@ -11,14 +11,12 @@ namespace DTO
         public string NgayMuon { get; set; }
         public string MaDG { get; set; }
         public string MaNV { get; set; }
-        public int TienCoc { get; set; }
-        public PhieuMuon(string idPM,string date, string idDG, string idNV, int tienCoc)
+        public PhieuMuon(string idPM,string date, string idDG, string idNV)
         {
             this.MaPM = idPM;
             this.NgayMuon = date;
             this.MaDG = idDG;
             this.MaNV = idNV;
-            this.TienCoc = tienCoc;
         }
     }
 }

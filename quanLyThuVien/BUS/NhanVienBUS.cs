@@ -36,6 +36,31 @@ namespace BUS
 
         }
 
+        public bool DeleteNV(NhanVien nv)
+        {
+            try
+            {
+                return new NhanVienDAO().DeleteNV(nv);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool UpdateNV(NhanVien nhanVien)
+        {
+            try
+            {
+                return new NhanVienDAO().UpdateNV(nhanVien);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
 
     }
 }
