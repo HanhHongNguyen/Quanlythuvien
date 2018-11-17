@@ -16,6 +16,11 @@ namespace DTO
             this.TenTacGia = name;
             this.Text = text;
         }
+        public TacGia(string id, string name)
+        {
+            this.MaTacGia = id;
+            this.TenTacGia = name;
+        }
 
     }
 }

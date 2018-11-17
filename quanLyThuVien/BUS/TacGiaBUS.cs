@@ -22,7 +22,18 @@ namespace BUS
                 throw ex;
             }
         }
+        public List<TacGia> getTG()
+        {
+            try
+            {
+                return new DAO.TacGiaDAO().getTG();
+            }
+            catch (SqlException ex)
+            {
 
+                throw ex;
+            }
+        }
         public int AddTG(TacGia tacGia)
         {
             try

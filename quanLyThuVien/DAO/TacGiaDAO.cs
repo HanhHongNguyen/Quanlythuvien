@@ -42,6 +42,38 @@ namespace DAO
             }
         }
 
+        public List<TacGia> getTG()
+        {
+            string sql = "SELECT MaTacGia, TenTacGia FROM TacGia";
+            string id, name;
+
+            List<TacGia> list = new List<TacGia>();
+            Connect();
+
+            try
+            {
+                SqlDataReader dr = myExecuteReader(sql);
+                while (dr.Read())
+                {
+                    id = dr[0].ToString();
+                    name = dr[1].ToString();
+                    TacGia tg = new TacGia(id, name);
+                    list.Add(tg);
+                }
+                dr.Close();
+                return list;
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
         public bool DeleteTG(TacGia tg)
         {
             string sql = "DELETE FROM TacGia WHERE MaTacGia = @id";

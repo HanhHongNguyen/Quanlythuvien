@@ -27,7 +27,7 @@ namespace quanLyThuVien
             dgvPM.DataSource = list;
             List<Sach> list2 = new PhieuMuonBUS().getSachMuon();
             dgvSachChon.DataSource = list2;
-            List<TacGia> listTG = new TacGiaBUS().getTacGia();
+            List<TacGia> listTG = new TacGiaBUS().getTG();
             (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).DataSource = listTG;
             (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).DisplayMember = "TenTacGia";
             (dgvSachChon.Columns[3] as DataGridViewComboBoxColumn).ValueMember = "MaTacGia";
@@ -36,7 +36,7 @@ namespace quanLyThuVien
             (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DataSource = listTL;
             (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DisplayMember = "TenTheLoai";
             (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).ValueMember = "MaTheLoai";
-            (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+            //(dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
             Init();
         }
         public void Init()

@@ -45,6 +45,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dgvPM = new System.Windows.Forms.DataGridView();
             this.MaPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,9 +55,6 @@
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgvSachChon = new System.Windows.Forms.DataGridView();
-
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,7 +128,6 @@
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "SỬA";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            //this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnTim
             // 
@@ -261,6 +259,16 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã Sách";
+            this.columnHeader1.Width = 78;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên Sách";
+            this.columnHeader2.Width = 217;
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -348,16 +356,6 @@
             this.dgvSachChon.TabIndex = 0;
             this.dgvSachChon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSachChon_CellContentClick);
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã Sách";
-            this.columnHeader1.Width = 78;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên Sách";
-            this.columnHeader2.Width = 217;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(3, 212);
@@ -368,7 +366,7 @@
             // 
             // MaSach
             // 
-            this.MaSach.DataPropertyName = "IDSach";
+            this.MaSach.DataPropertyName = "MaSach";
             this.MaSach.HeaderText = "Mã Sách";
             this.MaSach.Name = "MaSach";
             this.MaSach.ReadOnly = true;
@@ -382,7 +380,7 @@
             // 
             // cbbTacGia
             // 
-            this.cbbTacGia.DataPropertyName = "IDTacGia";
+            this.cbbTacGia.DataPropertyName = "MaTacGia";
             this.cbbTacGia.HeaderText = "Tác Giả";
             this.cbbTacGia.Name = "cbbTacGia";
             this.cbbTacGia.ReadOnly = true;
@@ -391,7 +389,7 @@
             // 
             // cbbTheLoai
             // 
-            this.cbbTheLoai.DataPropertyName = "IDTheLoai";
+            this.cbbTheLoai.DataPropertyName = "MaTheLoai";
             this.cbbTheLoai.HeaderText = "Thể Loại";
             this.cbbTheLoai.Name = "cbbTheLoai";
             this.cbbTheLoai.ReadOnly = true;
@@ -400,7 +398,7 @@
             // 
             // nxb
             // 
-            this.nxb.DataPropertyName = "NXB";
+            this.nxb.DataPropertyName = "NamXB";
             this.nxb.HeaderText = "NXB";
             this.nxb.Name = "nxb";
             this.nxb.ReadOnly = true;

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.ngayTra = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbMaDocGia = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnTimPM = new System.Windows.Forms.Button();
-            this.txtMaPM = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,12 +50,12 @@
             this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPT = new System.Windows.Forms.DataGridView();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.MaPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDG1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtMaPM = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -96,6 +96,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(841, 467);
             this.splitContainer1.SplitterDistance = 342;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(156, 232);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "SỬA";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // ngayTra
             // 
@@ -149,13 +158,6 @@
             this.btnTimPM.TabIndex = 2;
             this.btnTimPM.Text = "TÌM";
             this.btnTimPM.UseVisualStyleBackColor = true;
-            // 
-            // txtMaPM
-            // 
-            this.txtMaPM.Location = new System.Drawing.Point(103, 21);
-            this.txtMaPM.Name = "txtMaPM";
-            this.txtMaPM.Size = new System.Drawing.Size(126, 20);
-            this.txtMaPM.TabIndex = 1;
             // 
             // label2
             // 
@@ -292,15 +294,6 @@
             this.dgvPT.Size = new System.Drawing.Size(495, 234);
             this.dgvPT.TabIndex = 0;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(156, 232);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 14;
-            this.btnUpdate.Text = "SỬA";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
             // MaPT
             // 
             this.MaPT.DataPropertyName = "MaPT";
@@ -329,6 +322,13 @@
             // 
             this.Delete.HeaderText = "Xóa";
             this.Delete.Name = "Delete";
+            // 
+            // txtMaPM
+            // 
+            this.txtMaPM.Location = new System.Drawing.Point(103, 21);
+            this.txtMaPM.Name = "txtMaPM";
+            this.txtMaPM.Size = new System.Drawing.Size(126, 20);
+            this.txtMaPM.TabIndex = 1;
             // 
             // frmTraSach
             // 
@@ -362,7 +362,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Button btnTimPM;
-        private System.Windows.Forms.TextBox txtMaPM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label3;
@@ -385,5 +384,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDG1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV1;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.TextBox txtMaPM;
     }
 }
