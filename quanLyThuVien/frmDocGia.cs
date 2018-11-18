@@ -58,7 +58,7 @@ namespace quanLyThuVien
             {
                 int numberOfRows = new DocGiaBUS().AddDG(docGia);
                 dgvDocGia.DataSource = docGiaBUS.getDocGia();
-
+                Init();
             }
             catch (SqlException ex)
             {
@@ -112,8 +112,8 @@ namespace quanLyThuVien
             try
             {
                 bool b = new DocGiaBUS().UpdateDG(docGia);
-                Init();
                 dgvDocGia.DataSource = new DocGiaBUS().getDocGia();
+                Init();
             }
             catch (SqlException ex)
             {

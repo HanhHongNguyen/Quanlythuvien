@@ -69,5 +69,18 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public bool UpdatePM(PhieuMuon pm)
+        {
+            try
+            {
+                return new PhieuMuonDAO().UpdatePM(pm);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

@@ -32,6 +32,11 @@ namespace quanLyThuVien
             comboTG.DataSource = list2;
             comboTG.DisplayMember = "Name";
             comboTG.ValueMember = "ID";
+            List<Sach> list3 = new SachBUS().getSach();
+            comboTim.DataSource = list3;
+            comboTim.DisplayMember = "TenSach";
+            comboTim.ValueMember = "IDSach";
+
         }
 
         public void Init()
@@ -88,32 +93,32 @@ namespace quanLyThuVien
             }
         }
 
-        private void btnThem_Click_2(object sender, EventArgs e)
-        {
-            string idsach, tensach, idtacgia, idtheloai, tinhtrang;
-            int nxb;
-            idsach = txtMaSach.Text;
-            tensach = txtTenSach.Text;
-            idtacgia = comboTG.SelectedValue.ToString();
-            idtheloai = comboTheLoai.SelectedValue.ToString();
-            nxb = int.Parse(txtNXB.Text);
-            tinhtrang = txtTinhTrang.Text;
+        //private void btnThem_Click(object sender, EventArgs e)
+        //{
+        //    string idsach, tensach, idtacgia, idtheloai, tinhtrang;
+        //    int nxb;
+        //    idsach = txtMaSach.Text;
+        //    tensach = txtTenSach.Text;
+        //    idtacgia = comboTG.SelectedValue.ToString();
+        //    idtheloai = comboTheLoai.SelectedValue.ToString();
+        //    nxb = int.Parse(txtNXB.Text);
+        //    tinhtrang = txtTinhTrang.Text;
 
-            Sach sach = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, tinhtrang);
+        //    Sach sach = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, tinhtrang);
 
-            try
-            {
-                int numerOfRows = new SachBUS().Add(sach);
-                MessageBox.Show("Them thanh cong");
-                Init();
-            }
+        //    try
+        //    {
+        //        int numerOfRows = new SachBUS().Add(sach);
+        //        MessageBox.Show("Them thanh cong");
+        //        Init();
+        //    }
 
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Loi them sach\n" + ex.Message);
+        //    catch (SqlException ex)
+        //    {
+        //        MessageBox.Show("Loi them sach\n" + ex.Message);
 
-            }
-        }
+        //    }
+        //}
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -140,6 +145,46 @@ namespace quanLyThuVien
                 MessageBox.Show("Lỗi sửa thông tin sách\n" + ex.Message);
 
             }
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            string idsach, tensach, idtacgia, idtheloai, tinhtrang;
+            int nxb;
+            idsach = txtMaSach.Text;
+            tensach = txtTenSach.Text;
+            idtacgia = comboTG.SelectedValue.ToString();
+            idtheloai = comboTheLoai.SelectedValue.ToString();
+            nxb = int.Parse(txtNXB.Text);
+            tinhtrang = txtTinhTrang.Text;
+
+            Sach sach = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, tinhtrang);
+
+            try
+            {
+                int numerOfRows = new SachBUS().Add(sach);
+                MessageBox.Show("Them thanh cong");
+                Init();
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Loi them sach\n" + ex.Message);
+
+            }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string idSach = comboTim.SelectedValue.ToString();
+            DataTable tb = new SachBUS().TimkiemtheoTen(idSach);
+            dgvSach.DataSource = tb;
+            
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Init();
         }
     }
 }

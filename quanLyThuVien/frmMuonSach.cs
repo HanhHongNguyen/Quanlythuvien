@@ -133,5 +133,29 @@ namespace quanLyThuVien
             }
 
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            String idPM, idDG, idNV, date;
+            idPM = txtMaPM.Text;
+            idDG = txtMaDG.Text;
+            idNV = txtMaNV.Text;
+            date = ngayMuon.Value.ToString();
+            PhieuMuon pm = new PhieuMuon(idPM, date, idDG, idNV);
+
+            try
+            {
+                bool b = new PhieuMuonBUS().UpdatePM(pm);
+                dgvPM.DataSource = new PhieuMuonBUS().getPM();
+                MessageBox.Show("Sửa thông tin phiếu mượn thành công\n");
+                Init();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi sửa thông tin phiếu trả\n" + ex.Message);
+
+            }
+        }
     }
 }

@@ -45,5 +45,31 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public bool UpdatePT(PhieuTra pt)
+        {
+            try
+            {
+                return new PhieuTraDAO().UpdatePT(pt);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool DeletePT(PhieuTra pt)
+        {
+            try
+            {
+                return new PhieuTraDAO().DeletePT(pt);
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

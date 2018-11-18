@@ -67,6 +67,13 @@ namespace DAO
                 throw ex;
             }
         }
+
+        public DataTable TimkiemtheoTen(string idSach)
+        {
+            string sql = "SELECT * FROM Sach WHERE MaSach LIKE N'%" + idSach + "%'";
+            return find(sql);
+        }
+
         public bool DeleteSach(Sach s)
         {
             string sql = "DELETE FROM Sach WHERE MaSach = @idsach";

@@ -168,7 +168,6 @@
             this.btnTimPM.TabIndex = 2;
             this.btnTimPM.Text = "TÌM";
             this.btnTimPM.UseVisualStyleBackColor = true;
-            this.btnTimPM.Click += new System.EventHandler(this.btnTimPM_Click_1);
             // 
             // txtMaPM
             // 
@@ -176,7 +175,6 @@
             this.txtMaPM.Name = "txtMaPM";
             this.txtMaPM.Size = new System.Drawing.Size(126, 20);
             this.txtMaPM.TabIndex = 1;
-            this.txtMaPM.TextChanged += new System.EventHandler(this.txtMaPM_TextChanged);
             // 
             // label2
             // 
@@ -186,7 +184,6 @@
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã PM :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -203,7 +200,6 @@
             this.txtMaPT.Name = "txtMaPT";
             this.txtMaPT.Size = new System.Drawing.Size(126, 20);
             this.txtMaPT.TabIndex = 1;
-            this.txtMaPT.TextChanged += new System.EventHandler(this.txtMaPT_TextChanged);
             // 
             // label1
             // 
@@ -213,7 +209,6 @@
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã PT :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // splitContainer2
             // 
@@ -309,6 +304,7 @@
             this.dgvPT.Name = "dgvPT";
             this.dgvPT.Size = new System.Drawing.Size(541, 234);
             this.dgvPT.TabIndex = 0;
+            this.dgvPT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPT_CellContentClick);
             // 
             // MaPT
             // 

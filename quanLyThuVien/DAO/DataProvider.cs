@@ -117,5 +117,16 @@ namespace DAO
             }
 
         }
+
+        public DataTable find(string sql)
+        {
+            Connect();
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataTable tb = new DataTable();
+            da.Fill(tb);
+            Disconnect();
+            return tb;
+
+        }
     }
 }

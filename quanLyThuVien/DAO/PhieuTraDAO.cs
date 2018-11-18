@@ -43,6 +43,44 @@ namespace DAO
                 Disconnect();
             }
         }
+
+        public bool DeletePT(PhieuTra pt)
+        {
+            string sql = "DELETE FROM PhieuTra WHERE MaPT = @idPT";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@idPT", pt.MaPT));
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool UpdatePT(PhieuTra pt)
+        {
+            string sql = "UPDATE PhieuTra SET NgayTra = @date, MaDocGia =@idDG, MaNV =@idNV WHERE MaPT =@idPT";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@idPT", pt.MaPT));
+            parameters.Add(new SqlParameter("@date", pt.NgayTra));
+            parameters.Add(new SqlParameter("@idDG", pt.MaDG));
+            parameters.Add(new SqlParameter("@idNV", pt.MaNV));
+
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, parameters) > 0;
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public List<PhieuTra> getPT()
         {
             string sql = "SELECT * FROM PhieuTra";

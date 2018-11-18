@@ -77,6 +77,27 @@ namespace DAO
                 Disconnect();
             }
         }
+
+        public bool UpdatePM(PhieuMuon pm)
+        {
+            string sql = "UPDATE PhieuMuon SET NgayMuon = @date, MaDocGia =@idDG, MaNV =@idNV WHERE MaPM =@idPM";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@idPM", pm.MaPM));
+            parameters.Add(new SqlParameter("@date", pm.NgayMuon));
+            parameters.Add(new SqlParameter("@idDG", pm.MaDG));
+            parameters.Add(new SqlParameter("@idNV", pm.MaNV));
+
+            try
+            {
+                return myExecuteNonQuery(sql, CommandType.Text, parameters) > 0;
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public int Add(PhieuMuon pm)
         {
             string sql = "INSERT INTO PhieuMuon VALUES (@idPM,@date,@idDG,@idNV)";

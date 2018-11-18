@@ -63,7 +63,7 @@ namespace quanLyThuVien
             try
             {
                 int numberOfRows = new PhieuTraBUS().Add(pt);
-                dgvPM.DataSource = new PhieuTraBUS().getPT();
+                dgvPT.DataSource = new PhieuTraBUS().getPT();
 
             }
             catch (SqlException ex)
@@ -80,7 +80,26 @@ namespace quanLyThuVien
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            String idPT, idDG, idNV, date;
+            idPT = txtMaPT.Text;
+            idDG = lbMaDocGia.Text;
+            idNV = comboMaNV.SelectedValue.ToString();
+            date = ngayTra.Value.ToString();
+
+            PhieuTra pt = new PhieuTra(idPT, date, idDG, idNV);
+
+            try
+            {
+                bool b = new PhieuTraBUS().UpdatePT(pt);
+                Init();
+                dgvPT.DataSource = new PhieuTraBUS().getPT();
+                MessageBox.Show("Sửa thông tin phiếu trả thành công\n");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi sửa thông tin phiếu trả\n" + ex.Message);
+
+            }
         }
 
         private void dgvPM_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -88,29 +107,35 @@ namespace quanLyThuVien
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void dgvPT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                var senderGrid = (DataGridView)sender;
 
-        }
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                    e.RowIndex >= 0)
+                {
+                    String idPT, idDG, idNV, date;
+                    idPT = txtMaPT.Text;
+                    idDG = lbMaDocGia.Text;
+                    idNV = comboMaNV.SelectedValue.ToString();
+                    date = ngayTra.Value.ToString();
 
-        private void txtMaPM_TextChanged(object sender, EventArgs e)
-        {
+                    PhieuTra pt = new PhieuTra(idPT, date, idDG, idNV);
+                    bool b = new PhieuTraBUS().DeletePT(pt);
+                    if (b)
+                    {
+                        MessageBox.Show("Xoa Thành Công");
+                    }
+                }
+                Init();
+            }
+            catch (SqlException ex)
+            {
 
-        }
-
-        private void btnTimPM_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaPT_TextChanged(object sender, EventArgs e)
-        {
-
+                MessageBox.Show("Xóa thất bại", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
