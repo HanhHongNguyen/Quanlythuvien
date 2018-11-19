@@ -40,6 +40,8 @@ namespace quanLyThuVien
             {
                 int numerOfRows = new TheLoaiBUS().Add(theLoai);
                 dgvTL.DataSource = new TheLoaiBUS().getTL();
+                MessageBox.Show("Thêm thành công");
+                Init();
             }
             catch (SqlException ex)
             {

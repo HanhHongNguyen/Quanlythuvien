@@ -4,10 +4,11 @@ using DAO;
 using BUS;
 using DTO;
 
-namespace Tester2
+
+namespace Tester
 {
     [TestClass]
-    public class UnitTest1
+    public class TestThem
     {
         private NhanVienDAO nvDAO = new NhanVienDAO();
         private NhanVien nv;
@@ -17,14 +18,23 @@ namespace Tester2
         private Sach s;
         private TheLoaiDAO tlDAO = new TheLoaiDAO();
         private TheLoai tl;
+        private TacGiaDAO tgDAO = new TacGiaDAO();
+        private TacGia tg;
+        private PhieuMuonDAO pmDAO = new PhieuMuonDAO();
+        private PhieuMuon pm;
+        private PhieuTraDAO ptDAO = new PhieuTraDAO();
+        private PhieuTra pt;
 
         [TestInitialize]
         public void Setup()
         {
-            this.nv = new NhanVien("NV20", "Hu?nh Th? Lan", "0904356578");
-            this.dg = new DocGia("DG19", "Nguy?n Van A", "371 Nguy?n Ki?m", "0125487282", "");
-            this.s = new Sach("SA11", "Hoa h?ng den", "TG04", "TL03", 1965, "M?i");
-            this.tl = new TheLoai("TL17", "M? và bé");
+            this.nv = new NhanVien("NV23", "Lương Xuân Tiến", "0904356578");
+            this.dg = new DocGia("DG21", "Nguyễn Anh Đào", "371 Đào Duy Từ", "0125487282", "");
+            this.s = new Sach("SA13", "Cánh Hồng phai", "TG05", "TL02", 1965, "Mới");
+            this.tl = new TheLoai("", "Thơ bát cú");
+            this.tg = new TacGia("TG10", "Nguyễn Ái Quốc", "");
+            this.pm = new PhieuMuon("PM06", "2018-01-12", "DG01", "NV03");
+            this.pt = new PhieuTra("PT03", "2018-06-30", "DG03", "NV02");
         }
 
         [TestMethod]
@@ -74,11 +84,45 @@ namespace Tester2
             }
 
             Assert.AreEqual(dem, this.tlDAO.getTL().Count);
+            //Assert.AreEqual(dem,);
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void ThemTacGia()
         {
+            int dem = this.tgDAO.getTacGia().Count;
+            if (this.tgDAO.AddTG(tg) == 1)
+            {
+                dem += 1;
+            }
+
+            Assert.AreEqual(dem, this.tgDAO.getTacGia().Count);
         }
+
+        [TestMethod]
+        public void ThemPhieuMuon()
+        {
+            int dem = this.pmDAO.getPM().Count;
+            if (this.pmDAO.Add(pm) == 1)
+            {
+                dem += 1;
+            }
+
+            Assert.AreEqual(dem, this.pmDAO.getPM().Count);
+        }
+
+        [TestMethod]
+        public void ThemPhieuTra()
+        {
+            int dem = this.ptDAO.getPT().Count;
+            if (this.ptDAO.Add(pt) == 1)
+            {
+                dem += 1;
+            }
+
+            Assert.AreEqual(dem, this.ptDAO.getPT().Count);
+        }
+
+
     }
 }

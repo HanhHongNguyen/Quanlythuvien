@@ -36,8 +36,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbMaDocGia = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnTimPM = new System.Windows.Forms.Button();
-            this.txtMaPM = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaPT = new System.Windows.Forms.TextBox();
@@ -56,6 +54,9 @@
             this.MaDG1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.comboPhieuMuon = new System.Windows.Forms.ComboBox();
+            this.btnBackPM = new System.Windows.Forms.Button();
+            this.btnTimPM = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -76,6 +77,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnBackPM);
+            this.splitContainer1.Panel1.Controls.Add(this.btnTimPM);
+            this.splitContainer1.Panel1.Controls.Add(this.comboPhieuMuon);
             this.splitContainer1.Panel1.Controls.Add(this.comboMaNV);
             this.splitContainer1.Panel1.Controls.Add(this.btnUpdate);
             this.splitContainer1.Panel1.Controls.Add(this.ngayTra);
@@ -83,8 +87,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel1.Controls.Add(this.lbMaDocGia);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
-            this.splitContainer1.Panel1.Controls.Add(this.btnTimPM);
-            this.splitContainer1.Panel1.Controls.Add(this.txtMaPM);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaPT);
@@ -108,9 +110,9 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(156, 232);
+            this.btnUpdate.Location = new System.Drawing.Point(250, 233);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 40);
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "SỬA";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -135,9 +137,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 233);
+            this.btnAdd.Location = new System.Drawing.Point(101, 233);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(75, 40);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "THÊM";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -159,22 +161,6 @@
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Mã đọc giả :";
-            // 
-            // btnTimPM
-            // 
-            this.btnTimPM.Location = new System.Drawing.Point(250, 21);
-            this.btnTimPM.Name = "btnTimPM";
-            this.btnTimPM.Size = new System.Drawing.Size(75, 23);
-            this.btnTimPM.TabIndex = 2;
-            this.btnTimPM.Text = "TÌM";
-            this.btnTimPM.UseVisualStyleBackColor = true;
-            // 
-            // txtMaPM
-            // 
-            this.txtMaPM.Location = new System.Drawing.Point(103, 21);
-            this.txtMaPM.Name = "txtMaPM";
-            this.txtMaPM.Size = new System.Drawing.Size(126, 20);
-            this.txtMaPM.TabIndex = 1;
             // 
             // label2
             // 
@@ -335,6 +321,34 @@
             this.Delete.HeaderText = "Xóa";
             this.Delete.Name = "Delete";
             // 
+            // comboPhieuMuon
+            // 
+            this.comboPhieuMuon.FormattingEnabled = true;
+            this.comboPhieuMuon.Location = new System.Drawing.Point(101, 21);
+            this.comboPhieuMuon.Name = "comboPhieuMuon";
+            this.comboPhieuMuon.Size = new System.Drawing.Size(130, 21);
+            this.comboPhieuMuon.TabIndex = 16;
+            // 
+            // btnBackPM
+            // 
+            this.btnBackPM.Location = new System.Drawing.Point(322, 21);
+            this.btnBackPM.Name = "btnBackPM";
+            this.btnBackPM.Size = new System.Drawing.Size(48, 23);
+            this.btnBackPM.TabIndex = 17;
+            this.btnBackPM.Text = "Cancel";
+            this.btnBackPM.UseVisualStyleBackColor = true;
+            this.btnBackPM.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnTimPM
+            // 
+            this.btnTimPM.Location = new System.Drawing.Point(250, 21);
+            this.btnTimPM.Name = "btnTimPM";
+            this.btnTimPM.Size = new System.Drawing.Size(48, 23);
+            this.btnTimPM.TabIndex = 18;
+            this.btnTimPM.Text = "TÌM";
+            this.btnTimPM.UseVisualStyleBackColor = true;
+            this.btnTimPM.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // frmTraSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,8 +380,6 @@
         private System.Windows.Forms.TextBox txtMaPT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button btnTimPM;
-        private System.Windows.Forms.TextBox txtMaPM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvPT;
@@ -390,5 +402,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV1;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.ComboBox comboMaNV;
+        private System.Windows.Forms.ComboBox comboPhieuMuon;
+        private System.Windows.Forms.Button btnBackPM;
+        private System.Windows.Forms.Button btnTimPM;
     }
 }

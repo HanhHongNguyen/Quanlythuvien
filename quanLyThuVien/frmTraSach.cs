@@ -137,5 +137,15 @@ namespace quanLyThuVien
                 MessageBox.Show("Xóa thất bại", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

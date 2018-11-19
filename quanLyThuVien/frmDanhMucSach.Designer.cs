@@ -88,12 +88,13 @@
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.txtMaSach);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvSach);
-            this.splitContainer1.Size = new System.Drawing.Size(1087, 478);
-            this.splitContainer1.SplitterDistance = 510;
+            this.splitContainer1.Size = new System.Drawing.Size(1292, 478);
+            this.splitContainer1.SplitterDistance = 507;
             this.splitContainer1.TabIndex = 0;
             // 
             // comboTim
@@ -265,7 +266,7 @@
             this.dgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSach.Location = new System.Drawing.Point(0, 0);
             this.dgvSach.Name = "dgvSach";
-            this.dgvSach.Size = new System.Drawing.Size(573, 478);
+            this.dgvSach.Size = new System.Drawing.Size(781, 478);
             this.dgvSach.TabIndex = 0;
             this.dgvSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSach_CellContentClick);
             // 
@@ -314,7 +315,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 478);
+            this.ClientSize = new System.Drawing.Size(1292, 478);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
