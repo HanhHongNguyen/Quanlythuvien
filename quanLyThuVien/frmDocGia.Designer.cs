@@ -214,13 +214,13 @@
             // 
             // id
             // 
-            this.id.DataPropertyName = "MaDG";
+            this.id.DataPropertyName = "MaDocGia";
             this.id.HeaderText = "Mã ĐG";
             this.id.Name = "id";
             // 
             // name
             // 
-            this.name.DataPropertyName = "TenDG";
+            this.name.DataPropertyName = "TenDocGia";
             this.name.HeaderText = "Tên DG";
             this.name.Name = "name";
             // 

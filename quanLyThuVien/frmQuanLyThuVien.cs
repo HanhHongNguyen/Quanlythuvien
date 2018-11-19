@@ -34,11 +34,6 @@ namespace quanLyThuVien
             ms.ShowDialog();
         }
 
-        private void ToolsmiTraSach_Click(object sender, EventArgs e)
-        {
-            frmTraSach ts = new frmTraSach();
-            ts.ShowDialog();
-        }
 
         private void ToolsmiTheLoaiSach_Click(object sender, EventArgs e)
         {

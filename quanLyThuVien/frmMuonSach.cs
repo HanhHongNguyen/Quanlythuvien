@@ -36,43 +36,64 @@ namespace quanLyThuVien
             (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DataSource = listTL;
             (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DisplayMember = "TenTheLoai";
             (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).ValueMember = "MaTheLoai";
-            //(dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+            (dgvSachChon.Columns[4] as DataGridViewComboBoxColumn).DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+            List<DocGia> listDG = new DocGiaBUS().getDocGia();
+            cbbDG.DataSource = listDG;
+            cbbDG.DisplayMember = "TenDocGia";
+            cbbDG.ValueMember = "MaDocGia";
+            List<NhanVien> listNV = new NhanVienBUS().getNV();
+            cbbNV.DataSource = listNV;
+            cbbNV.DisplayMember = "TenNV";
+            cbbNV.ValueMember = "IDNhanVien";
             Init();
         }
         public void Init()
         {
             List<PhieuMuon> list = new PhieuMuonBUS().getPM();
             dgvPM.DataSource = list;
-            txtMaPM.DataBindings.Clear();
-            txtMaPM.DataBindings.Add("Text", list, "MaPM");
-            txtMaDG.DataBindings.Clear();
-            txtMaDG.DataBindings.Add("Text", list, "MaDG");
+            txtMaSach.DataBindings.Clear();
+            txtMaSach.DataBindings.Add("Text", list, "MaSach");
+            cbbDG.DataBindings.Clear();
+            cbbDG.DataBindings.Add("SelectedValue", list, "MaDocGia");
             ngayMuon.DataBindings.Clear();
             ngayMuon.DataBindings.Add("Value", list, "NgayMuon");
-            txtMaNV.DataBindings.Clear();
-            txtMaNV.DataBindings.Add("Text", list, "MaNV");
-
+            cbbNV.DataBindings.Clear();
+            cbbNV.DataBindings.Add("SelectedValue", list, "MaNV");
+            dateTra.DataBindings.Clear();
+            dateTra.DataBindings.Add("Value", list, "NgayTra");
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            String idPM, idDG, idNV ,date ;
-            idPM = txtMaPM.Text;
-            idDG = txtMaDG.Text;
-            idNV = txtMaNV.Text;
-            date = ngayMuon.Value.ToString();
-            PhieuMuon pm = new PhieuMuon(idPM, date, idDG, idNV);
-
-            try
+            PhieuMuon pm;
+            String idSach, idDG, idNV, dateM, dateT;
+            if (dateTra.Value > ngayMuon.Value)
             {
-                int numberOfRows = new PhieuMuonBUS().Add(pm);
-                MessageBox.Show("Thêm thành công ");
-                Init();
+                try
+                {
+                    foreach (ListViewItem i in listView1.Items)
+                    {
+                        idSach = i.Text;
+                        idDG = cbbDG.SelectedValue.ToString();
+                        dateM = ngayMuon.Value.ToString("yyyy-MM-dd");
+                        idNV = cbbNV.SelectedValue.ToString();
+                        dateT = dateTra.Value.ToString("yyyy-MM-dd");
+                        pm = new PhieuMuon(idSach, idDG, dateM, idNV, dateT);
+                        int numberOfRows = new PhieuMuonBUS().Add(pm);
+                    }
+                    Init();
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Loi them doc gia\n" + ex.Message);
 
+                catch (SqlException ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi", ex.Message);
             }
+
+        }
+            else
+            {
+                MessageBox.Show("Ngày trả sách phải lớn hơn ngày mượn sách");
+            }
+
         }
 
         private void dgvPM_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -80,24 +101,27 @@ namespace quanLyThuVien
             try
             {
                 var senderGrid = (DataGridView)sender;
-
                 if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                    e.RowIndex >= 0)
+                e.RowIndex >= 0)
                 {
-
-                    string idPM = txtMaPM.Text;
-                    string date = ngayMuon.Value.ToString();
-                    string idDG = txtMaDG.Text;
-                    string idNV = txtMaNV.Text;
-
-                    PhieuMuon pm = new PhieuMuon(idPM, date, idDG, idNV);
-                    bool b = new PhieuMuonBUS().DeletePM(pm);
-                    if (b)
+                    string idSach = txtMaSach.Text;
+                    string idDG = cbbDG.ToString();
+                    string dateM = ngayMuon.Value.ToString();
+                    string idNV = cbbNV.ToString();
+                    string dateT = dateTra.Value.ToString();
+                    PhieuMuon pm = new PhieuMuon(idSach, idDG, dateM, idNV, dateT);
+                    DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xóa không ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dlr == DialogResult.OK)
                     {
-                        MessageBox.Show("Xoa Thành Công");
+                        bool b = new PhieuMuonBUS().DeletePM(pm);
+                        if (b)
+                        {
+                            MessageBox.Show("Xóa Thành Công");
+                        }
+                        Init();
                     }
-                    Init();
                 }
+
 
             }
             catch (SqlException ex)
@@ -119,18 +143,29 @@ namespace quanLyThuVien
                 {
                     string idSach = dgvSachChon.Rows[index].Cells[1].Value.ToString();
                     string tenSach = dgvSachChon.Rows[index].Cells[2].Value.ToString();
-                    string idPM = txtMaPM.Text;
-                    ListViewItem item = new ListViewItem(idSach);
-                    item.SubItems.Add(tenSach);
-                    listView1.Items.Add(item);
-                    SachMuon sm = new SachMuon(idPM, idSach);
-                    int numberOfRows = new PhieuMuonBUS().AddSM(sm);
+                    DialogResult dlr = MessageBox.Show("Thêm nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dlr == DialogResult.OK)
+                    {
+                        ListViewItem item = new ListViewItem(idSach);
+                        item.SubItems.Add(tenSach);
+                        listView1.Items.Add(item);
+                    }                       
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("ThemThatBai", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ngayMuon_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

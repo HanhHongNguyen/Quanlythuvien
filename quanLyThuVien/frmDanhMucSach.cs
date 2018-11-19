@@ -60,12 +60,13 @@ namespace quanLyThuVien
 
         private void dgvSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
             try
             {
                 var senderGrid = (DataGridView)sender;
 
                 if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                    e.RowIndex >= 0)
+                e.RowIndex >= 0)
                 {
                     string idSach = txtMaSach.Text;
                     string name = txtTenSach.Text;
@@ -74,14 +75,19 @@ namespace quanLyThuVien
                     string tinhTrang = txtTinhTrang.Text;
                     int nxb = int.Parse(txtNXB.Text);
                     Sach s = new Sach(idSach, name, idTG, idTL, nxb, tinhTrang);
-                    bool b = new SachBUS().DeleteSach(s);
-                    if (b)
+
+                    DialogResult dlr = MessageBox.Show("Xóa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dlr == DialogResult.OK)
                     {
-                        MessageBox.Show("Xoa Thành Công");
+                        bool b = new SachBUS().DeleteSach(s);
+                        if (b)
+                        {
+                             MessageBox.Show("Xoa Thành Công");
+                        }
+                        Init();
                     }
-                    Init();
-                }
-                   
+                    }
+
 
             }
             catch (SqlException ex)
@@ -89,6 +95,7 @@ namespace quanLyThuVien
 
                 MessageBox.Show("Xoa that bai", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
         private void btnThem_Click_2(object sender, EventArgs e)
         {
@@ -105,14 +112,21 @@ namespace quanLyThuVien
 
             try
             {
-                int numerOfRows = new SachBUS().Add(sach);
-                MessageBox.Show("Them thanh cong");
-                Init();
+                if(idsach == "" || tensach == "" || tinhtrang == "")
+                {
+                    DialogResult dlr = MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    int numerOfRows = new SachBUS().Add(sach);
+                    MessageBox.Show("Them thanh cong");
+                    Init();
+                }               
             }
 
             catch (SqlException ex)
             {
-                MessageBox.Show("Loi them sach\n" + ex.Message);
+                MessageBox.Show("Them khong thanh cong\n" + ex.Message);
 
             }
         }
@@ -130,19 +144,24 @@ namespace quanLyThuVien
 
 
             Sach sach = new Sach(idsach, tensach, idtacgia, idtheloai, nxb, tinhtrang);
-
+            
             try
             {
-                bool b = new SachBUS().UpdateSa(sach);
-                Init();
-                dgvSach.DataSource = new SachBUS().getSach();
-                MessageBox.Show("Sửa thông tin sách thành công\n");
+                DialogResult dlr = MessageBox.Show("Sửa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dlr == DialogResult.OK)
+                {
+                    bool b = new SachBUS().UpdateSa(sach);
+                    Init();
+                    dgvSach.DataSource = new SachBUS().getSach();
+                    MessageBox.Show("Sửa thông tin sách thành công\n");
+                }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi sửa thông tin sách\n" + ex.Message);
+                 MessageBox.Show("Lỗi sửa thông tin sách\n" + ex.Message);
 
             }
+           
         }
 
         private void txtTimSach_TextChanged(object sender, EventArgs e)

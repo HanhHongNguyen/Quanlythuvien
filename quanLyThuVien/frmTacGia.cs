@@ -78,11 +78,16 @@ namespace quanLyThuVien
                     string text = txtGhiChu.Text;
 
                     TacGia tg = new TacGia(id, name, text);
-                    bool b = new TacGiaBUS().DeleteTG(tg);
-                    if (b)
+                    DialogResult dlr = MessageBox.Show("Xóa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dlr == DialogResult.OK)
                     {
-                        MessageBox.Show("Xóa Thành Công");
+                        bool b = new TacGiaBUS().DeleteTG(tg);
+                        if (b)
+                        {
+                            MessageBox.Show("Xóa Thành Công");
+                        }
                     }
+                       
                     Init();
 
                 }
@@ -106,9 +111,14 @@ namespace quanLyThuVien
 
             try
             {
-                bool b = new TacGiaBUS().UpdateTG(tacGia);
-                Init();
-                dgvTacGia.DataSource = new TacGiaBUS().getTacGia();
+                DialogResult dlr = MessageBox.Show("Sửa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dlr == DialogResult.OK)
+                {
+                    bool b = new TacGiaBUS().UpdateTG(tacGia);
+                    Init();
+                    dgvTacGia.DataSource = new TacGiaBUS().getTacGia();
+                }
+                   
             }
             catch (SqlException ex)
             {

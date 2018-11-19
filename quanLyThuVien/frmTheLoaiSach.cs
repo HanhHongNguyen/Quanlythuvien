@@ -58,16 +58,18 @@ namespace quanLyThuVien
 
 
                     string maTL = txtMaTL.Text;
-                    string tenTL = txtTheLoai.Text;
-                    
-
+                    string tenTL = txtTheLoai.Text;  
                     TheLoai tl = new TheLoai(maTL,tenTL);
-                    bool b = new TheLoaiBUS().DeleteTL(tl);
-                    if (b)
+                    DialogResult dlr = MessageBox.Show("Xóa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dlr == DialogResult.OK)
                     {
-                        MessageBox.Show("Xóa Thành Công");
+                        bool b = new TheLoaiBUS().DeleteTL(tl);
+                        if (b)
+                        {
+                            MessageBox.Show("Xóa Thành Công");
+                        }
+                        Init();
                     }
-                    Init();
 
                 }
             }
@@ -100,9 +102,14 @@ namespace quanLyThuVien
 
             try
             {
-                bool b = new TheLoaiBUS().UpdateTL(theLoai);
-                Init();
-                dgvTL.DataSource = new TheLoaiBUS().getTL();
+                DialogResult dlr = MessageBox.Show("Sửa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dlr == DialogResult.OK)
+                {
+                    bool b = new TheLoaiBUS().UpdateTL(theLoai);
+                    Init();
+                    dgvTL.DataSource = new TheLoaiBUS().getTL();
+                }
+                   
             }
             catch (SqlException ex)
             {

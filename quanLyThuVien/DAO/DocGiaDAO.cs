@@ -51,8 +51,8 @@ namespace DAO
         {
             string sql = "UPDATE DocGia SET TenDocGia = @name, DiaChi = @address, SDT = @phone, Email = @email Where MaDocGia = @id";
             List<SqlParameter> Parameters = new List<SqlParameter>();
-            Parameters.Add(new SqlParameter("@id", docGia.MaDG));
-            Parameters.Add(new SqlParameter("@name", docGia.TenDG));
+            Parameters.Add(new SqlParameter("@id", docGia.MaDocGia));
+            Parameters.Add(new SqlParameter("@name", docGia.TenDocGia));
             Parameters.Add(new SqlParameter("@address", docGia.DiaChi));
             Parameters.Add(new SqlParameter("@phone", docGia.SDT));
             Parameters.Add(new SqlParameter("@email", docGia.Email));
@@ -72,8 +72,8 @@ namespace DAO
         {
             string sql = "INSERT INTO DocGia VALUES (@id,@name,@address,@phone,@email)";
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@id", docGia.MaDG));
-            parameters.Add(new SqlParameter("@name", docGia.TenDG));
+            parameters.Add(new SqlParameter("@id", docGia.MaDocGia));
+            parameters.Add(new SqlParameter("@name", docGia.TenDocGia));
             parameters.Add(new SqlParameter("@address", docGia.DiaChi));
             parameters.Add(new SqlParameter("@phone", docGia.SDT));
             parameters.Add(new SqlParameter("@email", docGia.Email));
@@ -92,7 +92,7 @@ namespace DAO
         {
             string sql = "DELETE FROM DocGia WHERE MaDocGia = @id";
             List<SqlParameter> Parameters = new List<SqlParameter>();
-            Parameters.Add(new SqlParameter("@id", dg.MaDG));
+            Parameters.Add(new SqlParameter("@id", dg.MaDocGia));
             try
             {
                 return myExecuteNonQuery(sql, CommandType.Text, Parameters) > 0;

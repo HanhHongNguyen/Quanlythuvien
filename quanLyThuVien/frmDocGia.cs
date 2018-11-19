@@ -13,17 +13,15 @@ namespace quanLyThuVien
 {
     public partial class frmDocGia : Form
     {
-        DocGiaBUS docGiaBUS = new DocGiaBUS();
         public frmDocGia()
         {
             InitializeComponent();
-            docGiaBUS = new DocGiaBUS();
         }
         private void frmDocGia_Load(object sender, EventArgs e)
         {
-            Init();
             List<DocGia> list = new DocGiaBUS().getDocGia();
-            
+            dgvDocGia.DataSource = list;
+            Init();
         }
 
         public void Init()
@@ -31,9 +29,9 @@ namespace quanLyThuVien
             List<DocGia> list = new DocGiaBUS().getDocGia();
             dgvDocGia.DataSource = list;
             txtMaDG.DataBindings.Clear();
-            txtMaDG.DataBindings.Add("Text", list, "MaDG");
+            txtMaDG.DataBindings.Add("Text", list, "MaDocGia");
             txtTenDG.DataBindings.Clear();
-            txtTenDG.DataBindings.Add("Text", list, "TenDG");
+            txtTenDG.DataBindings.Add("Text", list, "TenDocGia");
             txtDiaChiDG.DataBindings.Clear();
             txtDiaChiDG.DataBindings.Add("Text", list, "DiaChi");
             txtSDT.DataBindings.Clear();
@@ -56,10 +54,19 @@ namespace quanLyThuVien
 
             try
             {
-                int numberOfRows = new DocGiaBUS().AddDG(docGia);
-                dgvDocGia.DataSource = docGiaBUS.getDocGia();
-
+                if (id == "" || name == "" || address == "" || phone == "")
+                {
+                    DialogResult dlr = MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    int numberOfRows = new DocGiaBUS().AddDG(docGia);
+                    Init();
+                    dgvDocGia.DataSource = new DocGiaBUS().getDocGia();
+                }
+                
             }
+            
             catch (SqlException ex)
             {
                 MessageBox.Show("Loi them doc gia\n" + ex.Message);
@@ -83,13 +90,18 @@ namespace quanLyThuVien
                     string phone = txtSDT.Text;
                     string email = txtEmail.Text;
                     DocGia dg = new DocGia(id, name, address, phone, email);
-                    bool b = new DocGiaBUS().DeleteDG(dg);
-                    if (b)
+                    DialogResult dlr = MessageBox.Show("Xóa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dlr == DialogResult.OK)
                     {
-                        MessageBox.Show("Xoa Thành Công");
+                        bool b = new DocGiaBUS().DeleteDG(dg);
+                        if (b)
+                        {
+                            MessageBox.Show("Xóa Thành Công");
+                        }
                     }
+                    Init();
                 }
-                Init();
+                
             }
             catch (SqlException ex)
             {
@@ -111,13 +123,19 @@ namespace quanLyThuVien
 
             try
             {
-                bool b = new DocGiaBUS().UpdateDG(docGia);
-                Init();
-                dgvDocGia.DataSource = new DocGiaBUS().getDocGia();
+                DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin đọc giả không ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dlr == DialogResult.OK)
+                {
+                    bool b = new DocGiaBUS().UpdateDG(docGia);
+                    MessageBox.Show("Sửa thông tin thành công\n");
+                    Init();
+                    dgvDocGia.DataSource = new DocGiaBUS().getDocGia();
+                }
+                   
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi sửa tác giả\n" + ex.Message);
+                MessageBox.Show("Lỗi sửa độc giả\n" + ex.Message);
 
             }
         }

@@ -22,7 +22,7 @@ namespace quanLyThuVien
         {
 
             string user = txtTen.Text.Trim();
-            string pass = txtPass.Text;
+            string pass = txtPass.Text.Trim();
             LoginBUS loginBUS = new LoginBUS();
             bool b = false;
             try
@@ -38,6 +38,19 @@ namespace quanLyThuVien
             if (b)
             {
                 this.DialogResult = DialogResult.OK;
+            }
+            else if (user == "" || pass =="")
+            {
+                DialogResult result = MessageBox.Show("Khong duoc bo trong Username va Password", "Đăng nhập", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (result == DialogResult.Cancel)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    txtTen.Focus();
+                    txtPass.Text = "";
+                }
             }
             else
             {
@@ -56,7 +69,9 @@ namespace quanLyThuVien
 
         private void btCancel_Click(object sender, EventArgs e)
         {
+            
             this.Close();
+            Application.Exit();
         }
     }
 }

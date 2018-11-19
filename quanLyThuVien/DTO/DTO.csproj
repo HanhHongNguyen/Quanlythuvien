@@ -46,7 +46,6 @@
     <Compile Include="DocGia.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="PhieuMuon.cs" />
-    <Compile Include="PhieuTra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach.cs" />
     <Compile Include="SachMuon.cs" />

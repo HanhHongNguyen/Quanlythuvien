@@ -14,17 +14,17 @@ namespace quanLyThuVien
 {
     public partial class frmQuanLyNhanVien : Form
     {
-        NhanVienBUS nhanvienBUS;
         public frmQuanLyNhanVien()
         {
             InitializeComponent();
-            nhanvienBUS = new NhanVienBUS();
         }
 
         private void frmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
+            
             List<NhanVien> list = new NhanVienBUS().getNV();
             dgvNV.DataSource = list;
+            Init();
         }
 
         private void btThemNv_Click(object sender, EventArgs e)
@@ -38,8 +38,16 @@ namespace quanLyThuVien
 
             try
             {
-                int numerOfRows = new NhanVienBUS().Add(nhanvien);
-                dgvNV.DataSource = nhanvienBUS.getNV();
+                if (id == "" || name == "" || phone == "")
+                {
+                    DialogResult dlr = MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    int numerOfRows = new NhanVienBUS().Add(nhanvien);
+                    dgvNV.DataSource = new NhanVienBUS().getNV();
+                }
+               
             }
             catch (SqlException ex)
             {
@@ -77,13 +85,16 @@ namespace quanLyThuVien
 
 
                     NhanVien nv = new NhanVien(id, name, phone);
-                    bool b = new NhanVienBUS().DeleteNV(nv);
-                    if (b)
+                    DialogResult dlr = MessageBox.Show("Xóa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dlr == DialogResult.OK)
                     {
-                        MessageBox.Show("Xóa Thành Công");
-                    }
-                    Init();
-
+                        bool b = new NhanVienBUS().DeleteNV(nv);
+                        if (b)
+                        {
+                            MessageBox.Show("Xóa Thành Công");
+                        }
+                        Init();
+                    }                   
                 }
             }
             catch (SqlException ex)
@@ -104,13 +115,17 @@ namespace quanLyThuVien
 
             try
             {
-                bool b = new NhanVienBUS().UpdateNV(nhanvien);
-                Init();
-                dgvNV.DataSource = new NhanVienBUS().getNV();
+                DialogResult dlr = MessageBox.Show("Sửa nhé ?", "Cảnh báo !!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dlr == DialogResult.OK)
+                {
+                    bool b = new NhanVienBUS().UpdateNV(nhanvien);
+                    Init();
+                    dgvNV.DataSource = new NhanVienBUS().getNV();
+                }               
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi sửa tác giả\n" + ex.Message);
+                MessageBox.Show("Lỗi sửa thông tin nhân viên\n" + ex.Message);
 
             }
         }
